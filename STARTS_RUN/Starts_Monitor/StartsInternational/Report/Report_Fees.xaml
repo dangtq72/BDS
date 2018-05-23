@@ -1,0 +1,78 @@
+﻿<ad:DockableContent x:Class="StartsInternational.Report.Report_Fees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+        Title="Báo cáo phí môi giới" Height="420" Width="1024"
+        Name="frmReport_Fees" 
+        Loaded="frmReport_Fees_Loaded" PreviewKeyDown="frmReport_Fees_PreviewKeyDown">
+
+    <ad:DockableContent.Resources>
+        <ContextMenu x:Key="Cmu" Background="#D5DCE6"  >
+            <MenuItem Header="YCTT" InputGestureText="F8"  Foreground="Black" Click="btnView_Click"/>
+            <MenuItem Header="Print" InputGestureText=""  Foreground="Black" Click="btnExport_Click_1"/>
+        </ContextMenu>
+    </ad:DockableContent.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Label Content="Từ ngày   "/>
+            <DatePicker Name="dpFromDate" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="5,0,0,0" />
+
+            <Label Content="Đến ngày" VerticalAlignment="Center" Margin="5,0,0,0" HorizontalAlignment="Left"/>
+            <DatePicker Name="dpToDate" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="5,0,0,0" />
+
+            <Label Content="Khách hàng" VerticalAlignment="Center" Margin="5,0,0,0" HorizontalAlignment="Left"/>
+            <TextBox Name="txtCustomer" Width="150"  Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <Label Content="Tài khoản" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox Width="120" Name="cboCreatedBy" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Mã BĐS   " Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox Name="cboEsateCode" Width="120"  Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Người SD" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtUser" Width="150"  Margin="15,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            
+            <Button Content="Tìm kiếm" Name="btnSearch" Click="btnSearch_Click_1" Width="100" Margin="10,0,0,0"/>
+            <Button Content="Kết xuất" Name="btnExport" Click="btnExport_Click_1" Width="100" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid  Name="dgrContract" Grid.Row ="2"  AutoGenerateColumns="False" ContextMenu="{StaticResource Cmu}"
+                   LoadingRow="dgrContract_LoadingRow" PreviewKeyDown="dgrContract_PreviewKeyDown"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Estate_Code}" IsReadOnly="True" Header="Mã BĐS" MinWidth="150"/>
+                <DataGridTextColumn Binding="{Binding Estate_Name}" IsReadOnly="True" Header="Tên BĐS" MinWidth="150"/>
+                <DataGridTextColumn Binding="{Binding Contract_FromDate,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Thời gian" MinWidth="100" />
+                <DataGridTextColumn Binding="{Binding Customer_Name}" IsReadOnly="True" Header="Tên khách hàng" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding Users}" IsReadOnly="True" Header="Tên NSD" MinWidth="150" />
+
+                <DataGridTextColumn Binding="{Binding PhiMoiGio,StringFormat=#\,##0}" IsReadOnly="True" Header="Tiền môi giới" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding HanChuyenTien,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Hạn chuyển tiền" MinWidth="100" />
+
+                <DataGridTextColumn Binding="{Binding TienDaVe,StringFormat=#\,##0}" IsReadOnly="True" Header="Tiền đã về" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding TienChuaVe,StringFormat=#\,##0}" IsReadOnly="True" Header="Tiền chưa về" MinWidth="150" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</ad:DockableContent>

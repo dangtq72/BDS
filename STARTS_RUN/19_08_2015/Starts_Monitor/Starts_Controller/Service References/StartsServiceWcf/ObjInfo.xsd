@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ObjInfo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ObjInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFunction_GroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Function_GroupInfo" nillable="true" type="tns:Function_GroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFunction_GroupInfo" nillable="true" type="tns:ArrayOfFunction_GroupInfo" />
+  <xs:complexType name="Function_GroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Functionid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Group_Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Function_GroupInfo" nillable="true" type="tns:Function_GroupInfo" />
+  <xs:complexType name="ArrayOfUser_RightsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User_RightsInfo" nillable="true" type="tns:User_RightsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser_RightsInfo" nillable="true" type="tns:ArrayOfUser_RightsInfo" />
+  <xs:complexType name="User_RightsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="User_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="authcode" type="xs:decimal" />
+      <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="userid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User_RightsInfo" nillable="true" type="tns:User_RightsInfo" />
+</xs:schema>

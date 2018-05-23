@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="StartsInternational.CustomUserControl.ComboBoxSearch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="21" d:DesignWidth="300"
+             PreviewKeyDown="uscSearch_PreviewKeyDown"
+             FocusManager.FocusedElement="{Binding ElementName=txtSearch}"
+             x:Name="uscSearch"
+             KeyboardNavigation.TabNavigation="Continue"
+             FocusManager.IsFocusScope="False">
+
+    <UserControl.Resources>
+        <Style x:Key="ToggleButtonSearch" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid x:Name="grid">
+                            <Rectangle x:Name="Background" Fill="#FFFFFF" Stroke="#B9B9B9" StrokeThickness="0"/>
+
+                            <Border x:Name="border" BorderThickness="0" Background="Transparent" 
+                                Width="20" HorizontalAlignment="Right" Margin="0,0,0,0" >
+                                <Path x:Name="BtnArrow" Width="7" Fill="#333333" HorizontalAlignment="Center"
+                                  Data="M 0 0 L 7 0 L 3.5 4.5" UseLayoutRounding="True" Stretch="Uniform" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ToggleButton.IsMouseOver" SourceName="border" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#B9B9B9"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" SourceName="Background" Value="True">
+                                <Setter TargetName="Background" Property="Fill" Value="#F0F0F0"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="grid" Value="#F78A09"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollViewer">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <DockPanel Margin="{TemplateBinding Padding}">
+                                <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Hidden" 
+                                          VerticalScrollBarVisibility="Hidden" Focusable="False">
+                                    <GridViewHeaderRowPresenter Margin="0,0,0,0" 
+                                                            Columns="{Binding Path=TemplatedParent.View.Columns,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            ColumnHeaderContainerStyle="{Binding Path=TemplatedParent.View.ColumnHeaderContainerStyle,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            ColumnHeaderTemplate="{Binding Path=TemplatedParent.View.ColumnHeaderTemplate,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            ColumnHeaderTemplateSelector="{Binding Path=TemplatedParent.View.ColumnHeaderTemplateSelector,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            AllowsColumnReorder="{Binding Path=TemplatedParent.View.AllowsColumnReorder,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            ColumnHeaderContextMenu="{Binding Path=TemplatedParent.View.ColumnHeaderContextMenu,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            ColumnHeaderToolTip="{Binding Path=TemplatedParent.View.ColumnHeaderToolTip,RelativeSource={RelativeSource TemplatedParent}}"
+                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </ScrollViewer>
+
+                                <ScrollContentPresenter Name="PART_ScrollContentPresenter" KeyboardNavigation.DirectionalNavigation="Local"/>
+                            </DockPanel>
+
+                            <ScrollBar Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Maximum="{TemplateBinding ScrollableWidth}"
+                                   ViewportSize="{TemplateBinding ViewportWidth}" Value="{TemplateBinding HorizontalOffset}" 
+                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_VerticalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" 
+                                   ViewportSize="{TemplateBinding ViewportHeight}" Value="{TemplateBinding VerticalOffset}"
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="{x:Type GridViewColumnHeader}" TargetType="GridViewColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#373A3D"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+        </Style>
+
+        <Style x:Key="{x:Type ListView}" TargetType="ListView">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#B9B9B9"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="11.5"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListView">
+                        <Border Name="Border" BorderThickness="1" BorderBrush="#B9B9B9" Background="#FFFFFF">
+                            <ScrollViewer Style="{DynamicResource {x:Static GridView.GridViewScrollViewerStyleKey}}">
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsGrouping" Value="True">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#AAA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style TargetType="{x:Type ListViewItem}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                   Color="LightBlue" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}"
+                   Color="Purple" />
+            </Style.Resources>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#FFFFFF"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#FFFFFF"/>
+                </Trigger>
+
+                <Trigger Property="Selector.IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="#373A3D"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="grdSearch" >
+        <Border>
+            <Grid>
+                <TextBox MinHeight="21" x:Name="txtSearch" VerticalAlignment="Top"
+                         PreviewKeyUp="txtSearch_PreviewKeyUp" CharacterCasing="Upper"
+                         TabIndex="{Binding Path=TabIndex,ElementName=uscSearch}"/>
+                         <!--IsReadOnly="{Binding ElementName=uscSearch, Path=IsReadOnly}"/>-->
+
+                <ToggleButton Margin="0,1,1,0" Name="btnSelectList" HorizontalAlignment="Right" 
+                              Width="20" Height="19" VerticalAlignment="Top" Focusable="False" 
+                              Click="btnSelectList_Click" Style="{DynamicResource ToggleButtonSearch}"/>
+            </Grid>
+        </Border>
+        <Popup PlacementTarget="{Binding ElementName=txtSearch}" x:Name="myPopup" MaxHeight="400"
+               AllowsTransparency="True" PopupAnimation="Slide" 
+               StaysOpen="True" VerticalOffset="2" Focusable="False"
+               Width="{Binding  ElementName=uscSearch,Path=ActualWidth}"
+               Height="{Binding ElementName=uscSearch,Path=Height}">
+            <ListView Name="lviList" SelectionChanged="lviList_SelectionChanged"/>
+        </Popup>
+    </Grid>
+</UserControl>

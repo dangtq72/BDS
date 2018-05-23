@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ce2bbc9-aa63-42a8-a766-e170042765c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8888/StartsMonitor/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="5d37262e-99f4-4b13-8340-a23da9800180" SourceId="1" SourceUrl="net.tcp://localhost:8888/StartsMonitor/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="55da3b56-cb4c-4a3b-802d-4a2de8818a8c" SourceId="1" SourceUrl="net.tcp://localhost:8888/StartsMonitor/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4849eb03-4e27-4cad-b9f1-76571d589288" SourceId="1" SourceUrl="net.tcp://localhost:8888/StartsMonitor/mex" />
+    <MetadataFile FileName="ObjInfo.xsd" MetadataType="Schema" ID="b993afc7-8ab8-4835-8e7a-761554dfd67d" SourceId="1" SourceUrl="net.tcp://localhost:8888/StartsMonitor/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,205 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+
+    <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+        <Grid x:Name="grid">
+            <Rectangle x:Name="Background" Fill="#FFFFFF" Stroke="#B9B9B9"/>
+
+            <Border x:Name="border" BorderThickness="0" Background="Transparent" Width="20" HorizontalAlignment="Right" Margin="0,0,0,0" >
+                <Path x:Name="BtnArrow" Width="7" Fill="#333333" HorizontalAlignment="Center"
+                      Data="M 0 0 L 7 0 L 3.5 4.5" UseLayoutRounding="True" Stretch="Uniform" />
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsMouseOver" SourceName="border" Value="True">
+                <!--<Setter TargetName="Background" Property="Fill" Value="#F0F0F0"/>-->
+                <Setter TargetName="border" Property="Background" Value="#B9B9B9"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" SourceName="Background" Value="True">
+                <Setter TargetName="Background" Property="Fill" Value="#F0F0F0"/>
+            </Trigger>
+
+            <Trigger Property="IsEnabled" SourceName="Background" Value="False">
+                <Setter TargetName="Background" Property="Fill" Value="#F0F0F0"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost" Focusable="False" Background="Transparent" />
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Foreground" Value="#373A3D"/>
+        <Setter Property="FontFamily" Value="400-Arial"/>
+        <Setter Property="FontSize" Value="11.5"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="21"/>
+        <!--<Setter Property="Padding" Value="6,2,25,2" />-->
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="FocusedOn">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+
+                        <Storyboard x:Key="FocusedOff">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+
+                    <Grid>
+                        <ToggleButton Focusable="False" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press" Style="{x:Null}" />
+                        <ToggleButton Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="False"
+                                      IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" />
+                        <ContentPresenter HorizontalAlignment="Left" Margin="5,0,23,0" x:Name="ContentSite" VerticalAlignment="Center" UseLayoutRounding="True"
+                                          Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False" />
+                        <TextBox Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" 
+                                 Margin="3,0,23,0" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" 
+                                 Focusable="True" Background="Transparent" IsReadOnly="{TemplateBinding IsReadOnly}" 
+                                 VerticalContentAlignment="Center" BorderBrush="Transparent"/>
+                        <Rectangle x:Name="FocusVisualElement" Stroke="#F78A09" StrokeThickness="1" IsHitTestVisible="False" Opacity="0" />
+                        <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" 
+                               AllowsTransparency="True" PopupAnimation="Slide" Margin="0,1,0,0">
+                            <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                <Border x:Name="DropDownBorder" Margin="0,-1,0,0" BorderBrush="#f78a09" BorderThickness="1" CornerRadius="0,0,0,0" Background="#FFFFFF">
+                                    <ScrollViewer Margin="1,1,1,1" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </Popup>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsFocused" Value="False"/>
+                                <Condition Property="IsEditable" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FocusVisualElement" Property="Stroke" Value="#b9b9b9"/>
+                            <Setter Property="IsTabStop" Value="False" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="PART_EditableTextBox" />
+                        </MultiTrigger>
+
+                        <!--<Trigger Property="IsEditable" Value="True">
+                            <Setter Property="IsTabStop" Value="False" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="PART_EditableTextBox" />
+                        </Trigger>-->
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="#888" />
+                            <Setter TargetName="ToggleButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                        </Trigger>
+
+                        <Trigger Property="AllowsTransparency" SourceName="Popup" Value="True">
+                            <Setter Property="CornerRadius" Value="0" TargetName="DropDownBorder" />
+                            <Setter Property="Margin" Value="0,2,0,0" TargetName="DropDownBorder" />
+                        </Trigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsDropDownOpen" Value="True"/>
+                                
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Foreground" Value="#373A3D"/>
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="3,1,3,1" />
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="HighlightOn">
+                            <DoubleAnimation Duration="00:00:00.1000000" Storyboard.TargetName="BackgroundGradientOver" Storyboard.TargetProperty="Opacity" To="0.73" />
+                        </Storyboard>
+
+                        <Storyboard x:Key="HighlightOff">
+                            <DoubleAnimation Duration="00:00:00.1000000" Storyboard.TargetName="BackgroundGradientOver" Storyboard.TargetProperty="Opacity" To="0" />
+                        </Storyboard>
+
+                        <Storyboard x:Key="FocusedOn">
+                            <DoubleAnimation Duration="00:00:00.1000000" Storyboard.TargetName="recFocus" Storyboard.TargetProperty="Opacity" To="0.73" />
+                        </Storyboard>
+
+                        <Storyboard x:Key="FocusedOff">
+                            <DoubleAnimation Duration="00:00:00.1000000" Storyboard.TargetName="recFocus" Storyboard.TargetProperty="Opacity" To="0" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+
+                    <Grid SnapsToDevicePixels="true">
+                        <Rectangle x:Name="BackgroundGradientOver" Fill="#B9B9B9" Stroke="#B9B9B9" Opacity="0" />
+                        <Rectangle x:Name="recFocus" Fill="#f78a09" Stroke="#f78a09" Opacity="0"/>
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" UseLayoutRounding="True"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource HighlightOff}" x:Name="HighlightOff_BeginStoryboard1" />
+                            </Trigger.ExitActions>
+
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource HighlightOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#888" />
+                        </Trigger>
+                        
+                        <!--<Trigger Property="IsFocused" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.ExitActions>
+
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.EnterActions>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="IsSelected" Value="True"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

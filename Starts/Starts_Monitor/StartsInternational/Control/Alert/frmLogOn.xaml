@@ -1,0 +1,52 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CustomUserControl="clr-namespace:StartsInternational.CustomUserControl" 
+        x:Class="StartsInternational.Control.Alert.frmLogOn"
+        Title="" Height="240" Width="300" WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Window.Background>
+        <ImageBrush ImageSource="/StartsInternational;component/Images/lockscreen.png"
+                                Stretch="Fill" TileMode="Tile" Viewport="0,0,257,256" ViewportUnits="Absolute"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Image Width="150" Height="150" Margin="0,5,0,0" Source="/StartsInternational;component/Images/user.jpg" Stretch="UniformToFill" 
+               VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Image.Clip>
+                <EllipseGeometry Center="75,75" RadiusX="75" RadiusY="75" />
+            </Image.Clip>
+        </Image>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <Label Content="UserName" Name="lblUserName" VerticalAlignment="Center" FontSize="16" Margin="10,0,0,0" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" Margin="0,-5,0,0">
+            <Label Content="Locked" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Center" Foreground="White"/>
+        </StackPanel>
+
+
+        <Grid Grid.Row="3" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <CustomUserControl:CustomPasswordBox HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="txtPassword" Height="25" GotFocus="passwordBox1_GotFocus"
+			        Width="270" Margin="2,0,0,0" VerticalContentAlignment="Center"/>
+                <Button x:Name="btnExit" Grid.Row="1" HorizontalAlignment="Right" Style="{DynamicResource btnClose}"
+			Margin="5,0,0,0" VerticalAlignment="Center" Width="24" Height="24" Click="btnExit_Click" RenderTransformOrigin="4,1.083" />
+
+            </StackPanel>
+
+            <Button Visibility="Collapsed" Name="btnLogon" Content="Logon" Grid.Row="1" HorizontalAlignment="Left" 
+                       Margin="23,5,0,0" VerticalAlignment="Top" Width="76" Click="btnLogon_Click"/>
+        </Grid>
+
+
+    </Grid>
+</Window>

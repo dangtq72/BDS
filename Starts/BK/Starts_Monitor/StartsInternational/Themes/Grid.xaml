@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock">
+
+    <Style x:Key="BottomGrid" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="#E1E1E1"/>
+    </Style>
+
+    <Style x:Key="mainbackground" TargetType="{x:Type ad:DockingManager}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/StartsInternational;component/Themes/Images/bg.jpg" Stretch="Fill" TileMode="Tile" Viewport="0,0,257,256" ViewportUnits="Absolute"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="mainETF" TargetType="{x:Type ad:DockingManager}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/StartsInternational;component/Themes/Images/bgETF.jpg" Stretch="Fill" TileMode="Tile" Viewport="0,0,257,256" ViewportUnits="Absolute"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="mainSystem" TargetType="{x:Type ad:DockingManager}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/StartsInternational;component/Themes/Images/bgSystem.jpg"
+                                Stretch="Fill" TileMode="Tile" Viewport="0,0,257,256" ViewportUnits="Absolute"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--/style cùi bên index :))................................................/-->
+    <Style x:Key="CenterGrid" TargetType="{x:Type Grid}"/>
+   
+    <Style x:Key="TitleStyle" TargetType="{x:Type Grid}"/>
+ 
+    <!--<Style x:Key="BottomGrid" TargetType="{x:Type Grid}"/>-->
+    
+    <Style x:Key="TopGrid" TargetType="{x:Type Grid}"/>
+
+    <Style x:Key="bg_01" TargetType="{x:Type Grid}"/>
+</ResourceDictionary>

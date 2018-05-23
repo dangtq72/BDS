@@ -1,0 +1,13 @@
+2015-08-18 22:53:15,831 [40] ERROR Starts_Service.Contract_DA.Contract_Delete:{133} - System.Data.SqlClient.SqlException (0x80131904): The COMMIT TRANSACTION request has no corresponding BEGIN TRANSACTION.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Starts_Service.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in d:\STARTS_RUN\Starts_Monitor\Starts_Service\Helper\SQLHelper.cs:line 343
+   at Starts_Service.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters) in d:\STARTS_RUN\Starts_Monitor\Starts_Service\Helper\SQLHelper.cs:line 260
+   at Starts_Service.Contract_DA.Contract_Delete(Decimal p_Contract_Id) in d:\STARTS_RUN\Starts_Monitor\Starts_Service\DataAccessLayer\Contract_DA.cs:line 133
+ClientConnectionId:bd7a1d37-5386-4238-a80b-5b84acc850b2

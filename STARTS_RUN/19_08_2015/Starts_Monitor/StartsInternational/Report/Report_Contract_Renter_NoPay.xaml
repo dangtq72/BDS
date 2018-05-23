@@ -1,0 +1,55 @@
+﻿<ad:DockableContent x:Class="StartsInternational.Report.Report_Contract_Renter_NoPay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+        Title="BC HĐ bên thuê chưa đóng phí" Height="420" Width="1024"
+        Name="frmReport_Contract_Renter_NoPay" 
+        Loaded="frmReport_Contract_Renter_NoPay_Loaded_1" PreviewKeyDown="frmReport_Contract_Renter_NoPay_PreviewKeyDown_1">
+    
+    <ad:DockableContent.Resources>
+        <ContextMenu x:Key="Cmu" Background="#D5DCE6"  >
+            <MenuItem Header="View" InputGestureText="F5"  Foreground="Black" Click="btnView_Click"/>
+            <MenuItem Header="Print" InputGestureText=""  Foreground="Black" Click="btnExport_Click_1"/>
+        </ContextMenu>
+    </ad:DockableContent.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Label Content="Mã HĐ" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtCode" Width="150" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Bên YC môi giới" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Width="150" Name="txtObject_Name" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Button Content="Tìm kiếm" Name="btnSearch" Click="btnSearch_Click_1" Width="100" Margin="5,0,0,0"/>
+            <Button Content="Kết xuất" Name="btnExport" Click="btnExport_Click_1" Width="100" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid  Name="dgrContract" Grid.Row ="1"  AutoGenerateColumns="False" ContextMenu="{StaticResource Cmu}"
+                   LoadingRow="dgrContract_LoadingRow" PreviewKeyDown="dgrContract_PreviewKeyDown"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Contract_Code}" IsReadOnly="True" Header="Mã hợp đồng" MinWidth="200"/>
+                <!--<DataGridTextColumn Binding="{Binding Contract_Name}" IsReadOnly="True" Header="Tên hợp đồng" MinWidth="200" />-->
+                <DataGridTextColumn Binding="{Binding Contract_Date,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Ngày ký" MinWidth="100" />
+                <DataGridTextColumn Binding="{Binding Status_Name}" IsReadOnly="True" Header="Trạng thái hợp đồng" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding Object_Name}" IsReadOnly="True" Header="Bên YC môi giới" MinWidth="350" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</ad:DockableContent>

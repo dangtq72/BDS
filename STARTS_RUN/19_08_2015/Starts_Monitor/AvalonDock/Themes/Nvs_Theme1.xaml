@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Button.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/DataGrid.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/StatusBar.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Label.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Grid.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/TextBox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/ComboBox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Border.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Checkbox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/ListBox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/TabControl.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/PasswordBox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Calendar.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Ribbon.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/Image.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/NVSWindow.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/NVSNoteBox.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/NVSMainWindow.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/ListView.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/NVSWindow_EX.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/TreeView.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/ScrollViewer.xaml"/>
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/ScrollBar.xaml"/>
+        <!--<ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Nvs_Theme1/DockTheme.xaml"/>-->
+        <ResourceDictionary Source="/MorIndex_WPFApp;component/Themes/Combine.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

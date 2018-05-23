@@ -1,0 +1,48 @@
+﻿<Window x:Class="StartsInternational.Contract.Display.Contract_HetHan_Display"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:us="clr-namespace:StartsInternational.CustomUserControl"
+        Title="Thông tin hợp đồng sắp hết hạn"  
+        WindowStartupLocation="CenterScreen"
+        x:Name="frmContract_HetHan_Display" Loaded="frmContract_HetHan_Display_Loaded" KeyDown="frmContract_HetHan_Display_KeyDown"
+        Height="420" Width="1024" Style="{DynamicResource WindowFormStyle}">
+
+    <Window.Resources>
+        <ContextMenu x:Key="Cmu" Background="#D5DCE6"  >
+            <MenuItem Header="Sửa" InputGestureText="F4" Foreground="Black" Click="btnUpdate_Click"/>
+            <MenuItem Header="View" InputGestureText="F5"  Foreground="Black" Click="btnView_Click"/>
+            <MenuItem Header="Yc TT" InputGestureText="F8"  Foreground="Black" Click="btnRequestPay_Click"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DataGrid  Name="dgrContract" Grid.Row ="1"  AutoGenerateColumns="False" ContextMenu="{DynamicResource Cmu}"
+                   LoadingRow="dgrContract_LoadingRow" PreviewKeyDown="dgrContract_PreviewKeyDown"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Contract_Code}" IsReadOnly="True" Header="Mã hợp đồng" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Contract_Date,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Ngày ký" Width="100" />
+                <DataGridTextColumn Binding="{Binding Contract_FromDate,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Từ ngày" Width="100" />
+                <DataGridTextColumn Binding="{Binding Contract_ToDate_Ex,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Đến ngày" Width="100" />
+                <DataGridTextColumn Binding="{Binding Status_Name}" IsReadOnly="True" Header="Trạng thái hợp đồng" Width="150" />
+                <DataGridTextColumn Binding="{Binding Object_Name}" IsReadOnly="True" Header="Bên YC môi giới" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+       
+    </Grid>
+
+</Window>

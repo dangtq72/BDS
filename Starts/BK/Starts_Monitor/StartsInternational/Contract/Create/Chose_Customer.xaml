@@ -1,0 +1,51 @@
+﻿<Window x:Class="StartsInternational.Contract.Create.Chose_Customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tìm kiếm thông tin khách hàng" Height="400" Width="850"
+        Name="frmChose_Customer" Loaded="frmChose_Customer_Loaded"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="frmChose_Customer_KeyDown" Style="{DynamicResource WindowFormStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <Label Content="Tên khách hàng" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtRenterName" Width="150" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Số đt" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtPhone" Width="150" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            
+            <Button Content="Tìm kiếm" Name="btnSearch" Click="btnSearch_Click" Width="100" Margin="5,0,0,0"/>
+            <Button Content="Thêm mới" Name="btnInsert" Click="btnInsert_Click" Width="100" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        
+        <DataGrid  Name="dgrRenter" Grid.Row ="1"  AutoGenerateColumns="False"
+                   LoadingRow="dgrRenter_LoadingRow" PreviewKeyDown="dgrRenter_PreviewKeyDown"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Customer_Name}" IsReadOnly="True" Header="Tên khách hàng" Width="250"/>
+                <DataGridTextColumn Binding="{Binding Customer_Type_Name}" IsReadOnly="True" Header="Loại" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Address}" IsReadOnly="True" Header="Địa chỉ" Width="200" />
+                <DataGridTextColumn Binding="{Binding Phone}" IsReadOnly="True" Header="Số đt" Width="120" />
+                <DataGridTextColumn Binding="{Binding Fax}" IsReadOnly="True" Header="Fax" Width="100" />
+                <DataGridTextColumn Binding="{Binding Identity_Card}" IsReadOnly="True" Header="CMND/HC" Width="150" />
+                <DataGridTextColumn Binding="{Binding Tax_Code}" IsReadOnly="True" Header="Mã số thuế" Width="150" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

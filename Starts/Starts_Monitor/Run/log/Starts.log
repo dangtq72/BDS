@@ -1,0 +1,54 @@
+2016-03-16 14:44:01,857 [14] ERROR Starts_Controller.CommonData.get_c_serviceWCF:{52} - System.ServiceModel.EndpointNotFoundException: Could not connect to net.tcp://localhost:8888/StartsMonitor. The connection attempt lasted for a time span of 00:00:02.0030132. TCP error code 10061: No connection could be made because the target machine actively refused it 127.0.0.1:8888.  ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8888
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.BufferedConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.ConnectionPoolHelper.EstablishConnection(TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientFramingDuplexSessionChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOpenOnce.System.ServiceModel.Channels.ServiceChannel.ICallOnce.Call(ServiceChannel channel, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOnceManager.CallOnce(TimeSpan timeout, CallOnceManager cascade)
+   at System.ServiceModel.Channels.ServiceChannel.EnsureOpened(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Starts_Controller.StartsServiceWcf.IAppService.AllCode_CheckWCF()
+   at Starts_Controller.StartsServiceWcf.AppServiceClient.AllCode_CheckWCF() in D:\Working\Starts\Starts_Monitor\Starts_Controller\Service References\StartsServiceWcf\Reference.cs:line 349
+   at Starts_Controller.CommonData.get_c_serviceWCF() in D:\Working\Starts\Starts_Monitor\Starts_Controller\Common\CommonData.cs:line 42
+2016-03-16 14:44:03,889 [14] ERROR Starts_Controller.Allcode_Controller.AllCode_checkWCF:{77} - System.ServiceModel.EndpointNotFoundException: Could not connect to net.tcp://localhost:8888/StartsMonitor. The connection attempt lasted for a time span of 00:00:02.0057909. TCP error code 10061: No connection could be made because the target machine actively refused it 127.0.0.1:8888.  ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8888
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.BufferedConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.ConnectionPoolHelper.EstablishConnection(TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientFramingDuplexSessionChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOpenOnce.System.ServiceModel.Channels.ServiceChannel.ICallOnce.Call(ServiceChannel channel, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOnceManager.CallOnce(TimeSpan timeout, CallOnceManager cascade)
+   at System.ServiceModel.Channels.ServiceChannel.EnsureOpened(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Starts_Controller.StartsServiceWcf.IAppService.AllCode_CheckWCF()
+   at Starts_Controller.StartsServiceWcf.AppServiceClient.AllCode_CheckWCF() in D:\Working\Starts\Starts_Monitor\Starts_Controller\Service References\StartsServiceWcf\Reference.cs:line 349
+   at Starts_Controller.Allcode_Controller.AllCode_checkWCF() in D:\Working\Starts\Starts_Monitor\Starts_Controller\Controllers\Allcode_Controller.cs:line 68

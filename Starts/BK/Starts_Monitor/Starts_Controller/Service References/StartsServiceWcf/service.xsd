@@ -1,0 +1,1332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ObjInfo" />
+  <xs:element name="AllCode_Gets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllCode_GetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllCode_GetsResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllCode_GetBy_CdNameCdType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_cdtype" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_cdname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllCode_GetBy_CdNameCdTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllCode_GetBy_CdNameCdTypeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllCode_CheckWCF">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllCode_CheckWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllCode_CheckWCFResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Current_Date_Computer_Run_Service">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Current_Date_Computer_Run_ServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Get_Current_Date_Computer_Run_ServiceResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVersionInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUpdateList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUpdateListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUpdateListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuildingInEstate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuildingInEstateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBuildingInEstateResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Buiding_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_UpdateResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Buiding_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Building_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Building_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Building_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetByStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_status" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetByStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetByStatusResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_EstateObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_EstateObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetBy_EstateObjectResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetByIdResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_RenterTenant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Object_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Object_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_RenterTenantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetBy_RenterTenantResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_Type">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetBy_TypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetBy_TypeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Render_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Payment_Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_building" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Customer_Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Render_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Render_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_ByContract_Type">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Payment_Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_building" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_ByContract_TypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Search_ByContract_TypeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Payment_Status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_DenHanTB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DateNow" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DateNow_Add" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_DenHanTBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Search_DenHanTBResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Convert_Dola">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_money" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Convert_DolaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Convert_DolaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Max_Contract_Id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Max_Contract_IdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Get_Max_Contract_IdResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Contract_Exprire_Date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_ToDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Contract_Exprire_DateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Get_Contract_Exprire_DateResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Status_Contract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Modifi_By" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Mofifi_Date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Status_ContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Update_Status_ContractResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_ByExtend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Payment_Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_building" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Search_ByExtendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Search_ByExtendResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Get_EstateByContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Get_EstateByContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Get_EstateByContractResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_GetByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_GetByCodeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Contract_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Object_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Contract_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_FromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Contract_ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Term" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Pay_Count" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Object_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FeeOnePay" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Modifi_By" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Mofifi_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Users" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Representive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contract_ToDate_Ex" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Contract_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Object_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Contract_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_FromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Contract_ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Term" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Pay_Count" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Object_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FeeOnePay" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Created_by" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Created_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Users" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Representive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contract_ToDate_Ex" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contract_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_GetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Tenant_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_GetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_GetByIdResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Customer_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Identity_Card" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Tax_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Customer_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Is_Person" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Identity_Card" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Tax_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Customer_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Is_Person" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Tenant_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Phone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Check_In_Contract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer_Check_In_ContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Customer_Check_In_ContractResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_status" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetStatusResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetByIdResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetTypeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetByObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Object_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetByObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetByObjectResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Estate_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Estate_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_note" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Estate_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Statu" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_notes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Estate_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Building_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Check_Exit_EstateInContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Check_Exit_EstateInContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Check_Exit_EstateInContractResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Estate_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Estate_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_Status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetCbo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Estate_Object_GetCboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Estate_Object_GetCboResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_FromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Contract_ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Extend_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Term" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="FeeOnePay" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Number_Extend" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Extend_Contract_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Contract_FromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Contract_ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Extend_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Term" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="FeeOnePay" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Extend_Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Extend_Contract_UpdateResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_GetByContractId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extend_Contract_GetByContractIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Extend_Contract_GetByContractIdResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Number_ExtendContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Number_ExtendContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Get_Number_ExtendContractResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_GetByContractResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Object_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Object_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_GetByObjectResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Fee_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_Pay_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="p_Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Debit_Amount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Contract_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Object_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Object_Type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Number_Payment" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Pay_Date_Expected" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Pay_Date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Fee_Expected" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Pay_Status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Date_Of_Bill" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Debit_Amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Is_Extend" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Fee_Vnd" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_InsertResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_DeleteByContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Contract_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_DeleteByContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_DeleteByContractResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByObjectType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_Object_Type" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Revenue_GetByObjectTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_Revenue_GetByObjectTypeResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_Report">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Created_By" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Estate_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Users" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Customer_Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fees_ReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fees_ReportResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Function_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_Group_DelByGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_group_id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_Group_DelByGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Function_Group_DelByGroupResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Function_ByGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_group_id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Function_ByGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Get_Function_ByGroupResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_Group_Insert_Batch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ObjInfo" minOccurs="0" name="p_arr" nillable="true" type="q1:ArrayOfFunction_GroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Function_Group_Insert_BatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Function_Group_Insert_BatchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_GetAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupUser_GetAllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupUser_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_group_type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_note" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupUser_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_group_type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_note" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupUser_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupUser_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trace_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_object" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_frmdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_todate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trace_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trace_SearchResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trace_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Trace_Object" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Trace_Procedure" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strvalue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Trace_User" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trace_InsertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_user_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_LoginResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Get_All">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Get_AllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_Get_AllResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Update_Last_Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_User_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_last" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Update_Last_LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_Update_Last_LoginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Update_Pass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_User_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Update_PassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_Update_PassResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_User_Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_User_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_user_type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_full_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_group_id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_InsertResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_User_Id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_User_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_user_type" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_full_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_status" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_group_id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Send_Users_Get_MenuItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_user_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Send_Users_Get_MenuItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Send_Users_Get_MenuItemResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_DelByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_user_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_DelByUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_User_Right_By_UserFuntion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_user_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_fun_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_User_Right_By_UserFuntionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_Insert_Barth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ObjInfo" minOccurs="0" name="p_arr" nillable="true" type="q2:ArrayOfUser_RightsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_Insert_BarthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_Rights_Insert_BarthResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_GetByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_group_id" type="xs:decimal" />
+        <xs:element minOccurs="0" name="p_username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Rights_GetByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="User_Rights_GetByUserResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

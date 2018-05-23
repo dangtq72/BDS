@@ -1,0 +1,38 @@
+﻿<Application x:Class="StartsInternational.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Button.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Calendar.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/CheckBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ComboBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/DataGrid.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/DatePicker.xaml"/>
+                <!--<ResourceDictionary Source="/StartsInternational;component/Themes/DockTheme.xaml"/>-->
+                <ResourceDictionary Source="/StartsInternational;component/Themes/FilterControl.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Grid.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/GroupBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Label.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ListBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ListView.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/MainWindowETF.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/NoteBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/PasswordBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ProgressBar.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/RadioButton.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ScrollViewer.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/TabControl.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/TextBox.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/ToggleButton.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/TreeView.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/WindowStyle.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Combine.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/Image.xaml"/>
+                <ResourceDictionary Source="/StartsInternational;component/Themes/TabControlVertical.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

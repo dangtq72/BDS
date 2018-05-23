@@ -1,0 +1,55 @@
+﻿<Window x:Class="StartsInternational.Estate_Object.Update_Estate_Object"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sửa đối tượng bất động sản" SizeToContent="Height" ResizeMode="NoResize" Width="700"
+        Name="frmUpdate_Estate_Object" Loaded="frmUpdate_Estate_Object_Loaded_1"
+        KeyDown="frmUpdate_Estate_Object_KeyDown_1" WindowStartupLocation="CenterOwner"
+        Style="{DynamicResource WindowFormStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Content="Mã BĐS*:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Tên BĐS*:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Tòa nhà(*):" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Kiểu nhà:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Diện tích:" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="200,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Trạng thái:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Ghi chú:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+            <TextBox Name="txt_Estate_Code" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <TextBox Name="txt_Estate_Name" Height="42" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            
+            <TextBox Name="cboBuilding" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            
+            <ComboBox Name="cboType" Width="130"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <TextBox Name="txt_Estate_Area" Width="120" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="260,0,3,0" VerticalAlignment="Center" />
+            <ComboBox Name="cboStatus" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <TextBox Name="txtNote" Grid.Column="1" Height="42" TextWrapping="Wrap" Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1" Style="{DynamicResource BottomGrid}" Margin="0" Name="grdButton">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Chấp nhận" Width="90" HorizontalAlignment="Left" VerticalAlignment="Center" Name="btnChapNhan" Margin="0,0,0,0" Click="btnChapNhan_Click_1"/>
+                <Button Content="Thoát" Width="90" HorizontalAlignment="Left" Margin="100,0,0,0" Name="btnHuy" VerticalAlignment="Center" Click="btnHuy_Click_1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

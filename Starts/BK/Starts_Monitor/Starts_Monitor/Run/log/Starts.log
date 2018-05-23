@@ -1,0 +1,116 @@
+2015-08-18 01:16:16,108 [1] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in e:\Working\Starts\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 01:20:09,670 [1] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in e:\Working\Starts\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 01:20:32,806 [1] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in e:\Working\Starts\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 01:22:28,139 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{0} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity()
+2015-08-18 22:04:28,241 [9] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:21:36,961 [12] ERROR Starts_Controller.CommonData.get_c_serviceWCF:{52} - System.ServiceModel.EndpointNotFoundException: Could not connect to net.tcp://localhost:8888/StartsMonitor. The connection attempt lasted for a time span of 00:00:02.0461171. TCP error code 10061: No connection could be made because the target machine actively refused it 127.0.0.1:8888.  ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8888
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.BufferedConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.ConnectionPoolHelper.EstablishConnection(TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientFramingDuplexSessionChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOpenOnce.System.ServiceModel.Channels.ServiceChannel.ICallOnce.Call(ServiceChannel channel, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOnceManager.CallOnce(TimeSpan timeout, CallOnceManager cascade)
+   at System.ServiceModel.Channels.ServiceChannel.EnsureOpened(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Starts_Controller.StartsServiceWcf.IAppService.AllCode_CheckWCF()
+   at Starts_Controller.StartsServiceWcf.AppServiceClient.AllCode_CheckWCF() in d:\STARTS_RUN\Starts_Monitor\Starts_Controller\Service References\StartsServiceWcf\Reference.cs:line 349
+   at Starts_Controller.CommonData.get_c_serviceWCF() in d:\STARTS_RUN\Starts_Monitor\Starts_Controller\Common\CommonData.cs:line 42
+2015-08-18 22:21:39,106 [12] ERROR Starts_Controller.Allcode_Controller.AllCode_checkWCF:{77} - System.ServiceModel.EndpointNotFoundException: Could not connect to net.tcp://localhost:8888/StartsMonitor. The connection attempt lasted for a time span of 00:00:02.0861193. TCP error code 10061: No connection could be made because the target machine actively refused it 127.0.0.1:8888.  ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8888
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.SocketConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.BufferedConnectionInitiator.Connect(Uri uri, TimeSpan timeout)
+   at System.ServiceModel.Channels.ConnectionPoolHelper.EstablishConnection(TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientFramingDuplexSessionChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOpenOnce.System.ServiceModel.Channels.ServiceChannel.ICallOnce.Call(ServiceChannel channel, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.CallOnceManager.CallOnce(TimeSpan timeout, CallOnceManager cascade)
+   at System.ServiceModel.Channels.ServiceChannel.EnsureOpened(TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Starts_Controller.StartsServiceWcf.IAppService.AllCode_CheckWCF()
+   at Starts_Controller.StartsServiceWcf.AppServiceClient.AllCode_CheckWCF() in d:\STARTS_RUN\Starts_Monitor\Starts_Controller\Service References\StartsServiceWcf\Reference.cs:line 349
+   at Starts_Controller.Allcode_Controller.AllCode_checkWCF() in d:\STARTS_RUN\Starts_Monitor\Starts_Controller\Controllers\Allcode_Controller.cs:line 68
+2015-08-18 22:53:59,597 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:11,541 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:11,727 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:14,842 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:15,032 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:34,978 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643
+2015-08-18 22:54:35,164 [10] ERROR StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity:{713} - System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at StartsInternational.Contract.Contract_Insert_Tenant.Create_DataFee_Maturity() in d:\STARTS_RUN\Starts_Monitor\StartsInternational\Contract\Create\Contract_Insert_Tenant.xaml.cs:line 643

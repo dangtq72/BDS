@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6724C50-CC9E-45FF-AF24-47424915A0CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Starts_Controller</RootNamespace>
+    <AssemblyName>Starts_Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\General\dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\General\dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SendFiles">
+      <HintPath>..\..\General\dll\SendFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoUpdate\AutoUpdate.cs" />
+    <Compile Include="Common\CBO.cs" />
+    <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\CommonFunc.cs" />
+    <Compile Include="Common\Null.cs" />
+    <Compile Include="Common\ObjectDataReader.cs" />
+    <Compile Include="Controllers\Allcode_Controller.cs" />
+    <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\Contract_Controller.cs" />
+    <Compile Include="Controllers\Customer_Controller.cs" />
+    <Compile Include="Controllers\Estate_Object_Controller.cs" />
+    <Compile Include="Controllers\Extend_Contract_Controller.cs" />
+    <Compile Include="Controllers\Fees_Revenue_Controller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\StartsServiceWcf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="User_BL\FunctionsBL.cs" />
+    <Compile Include="User_BL\Function_GroupBL.cs" />
+    <Compile Include="User_BL\GroupUserBL.cs" />
+    <Compile Include="User_BL\User_Controller.cs" />
+    <Compile Include="User_BL\User_RightsBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoryData\MemoryData.csproj">
+      <Project>{7f78e357-6bb9-4933-8b8b-dace5b8f1208}</Project>
+      <Name>MemoryData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjInfo\ObjInfo.csproj">
+      <Project>{47e73dd7-7169-45c6-b05d-e08bd37b73c0}</Project>
+      <Name>ObjInfo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\StartsServiceWcf\ObjInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StartsServiceWcf\service.wsdl" />
+    <None Include="Service References\StartsServiceWcf\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StartsServiceWcf\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StartsServiceWcf\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StartsServiceWcf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StartsServiceWcf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StartsServiceWcf\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

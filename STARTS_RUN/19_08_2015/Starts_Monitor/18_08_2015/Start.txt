@@ -1,0 +1,36 @@
+1. Có 3 hợp đồng không có đối tượng Bất động sản
+2. Có tất cả 20 số hợp đồng trùng nhau <trùng số hợp đồng> 
+3. Làm thêm form thêm mới khách hàng
+4. Khi tạo hợp đồng được chọn Khách hàng,Đối tượng BĐS, Sinh mã hợp đồng tự động
+5. Khi sửa hợp đồng được chọn đối tượng BDS cần sửa , Khách hàng cần sửa <Click là Load hết thông tin ra> 
+6. Thêm mới hợp đồng phải bắt số hợp đồng không được trùng nhau
+7. Sửa hợp đồng cũng phải bắt số hợp đồng không được trùng nhau
+
+
+/
+[Contract_Type] = 2 : Hợp đồng bên cho thuê nhà
+[Contract_Type] = 1 : Hợp đồng bên Thuê
+/ Update HD Bên cho thuê nhà
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00019' where [Contract_Id] =20 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00001' where [Contract_Id] =1022 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00002' where [Contract_Id] =1023 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00003' where [Contract_Id] =1024 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00004' where [Contract_Id] =1028 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00005' where [Contract_Id] =1029 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00006' where [Contract_Id] =1032 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00007' where [Contract_Id] =1034 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00008' where [Contract_Id] =1038 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00009' where [Contract_Id] =1040 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00010' where [Contract_Id] =1043 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00011' where [Contract_Id] =1045 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00012' where [Contract_Id] =1052 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00013' where [Contract_Id] =1053 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00014' where [Contract_Id] =1054 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00015' where [Contract_Id] =1059 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00016' where [Contract_Id] =2048 and [Contract_Type] =2
+update [Starts].[dbo].[Contract] set [Contract_Code] ='SIVN/HDMG/OW_00017' where [Contract_Id] =2049 and [Contract_Type] =2
+
+/ Update HD bên thuê nhà
+
+
+

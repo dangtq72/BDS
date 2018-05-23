@@ -1,0 +1,90 @@
+﻿<Window x:Class="StartsInternational.Payment.Tenant_Payment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thanh toán phí môi giới" Height="450" Width="750"
+        Name="frmTenant_Payment" Loaded="frmTenant_Payment_Loaded_1"
+        KeyDown="frmTenant_Payment_KeyDown_1" WindowStartupLocation="CenterScreen"
+        Style="{DynamicResource WindowFormStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="85"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <GroupBox Header="Lịch sử thanh toán phí môi giới">
+                    <DataGrid Name="dgrFee" AutoGenerateColumns="False" PreviewKeyDown="dgrFee_PreviewKeyDown_1"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Number_Payment}" IsReadOnly="True" Header="Lần TT" Width="50" ElementStyle="{DynamicResource ElementStyle_VerticalAlignment}"/>
+                            <DataGridTextColumn Binding="{Binding Pay_Date_Expected,StringFormat=dd/MM/yyyy}" IsReadOnly="True" Header="Thời gian TT" Width="110" ElementStyle="{DynamicResource ElementStyle}"/>
+                            <DataGridTextColumn Binding="{Binding Fee_Expected,StringFormat=#\,##0}" IsReadOnly="True" Header="Số tiền phải TT" Width="140" ElementStyle="{DynamicResource ElementStyle_Number}"/>
+                            <DataGridTextColumn Binding="{Binding Fee,StringFormat=#\,##0}" IsReadOnly="True" Header="Số tiền đã TT" Width="140" ElementStyle="{DynamicResource ElementStyle_Number}"/>
+                            <DataGridTextColumn Binding="{Binding Debit_Amount,StringFormat=#\,##0}" IsReadOnly="True" Header="Còn nợ" Width="130" ElementStyle="{DynamicResource ElementStyle_Number}"/>
+                            <DataGridTextColumn Binding="{Binding Pay_Status_Name}" IsReadOnly="True" Header="Trạng thái TT" Width="*"  >
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Left"/>
+                                        <Setter Property="Margin" Value="5,0,0,0"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Pay_Status}" Value="1">
+                                                <Setter Property="Foreground" Value="Green"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Path=Pay_Status}" Value="0">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <GroupBox Header="Thanh toán trong kỳ">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Số tiền phải TT" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                        <TextBox IsEnabled="False" Name="txtFeeExpected" Grid.Column="1" Width="120" Grid.Row="0" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" TextChanged="TextBox_TextChanged"/>
+
+                        <Label Content="Ngày TT mong đợi" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Center" />
+                        <TextBox IsEnabled="False" Name="txtPay_Date_Expected" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="240,0,3,0"/>
+
+                        <Label Content="Số tiền TT" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                        <TextBox Name="txtFeePay" Grid.Column="1" Width="120" Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" TextChanged="TextBox_TextChanged"/>
+
+                        <Label Content="Ngày TT" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Center" />
+                        <DatePicker Name="dpPay_Date" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="240,0,3,0"/>
+
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Style="{DynamicResource BottomGrid}" Margin="0" Name="grdButton">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Chấp nhận" Width="90" HorizontalAlignment="Left" VerticalAlignment="Center" Name="btnChapNhan" Margin="0,0,0,0" Click="btnChapNhan_Click_1"/>
+                <Button Content="Thoát" Width="90" HorizontalAlignment="Left" Margin="100,0,0,0" Name="btnHuy" VerticalAlignment="Center" Click="btnHuy_Click_1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="StartsInternational.Building.View_Building"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Xem chi tiết thông tin tòa nhà" SizeToContent="Height" ResizeMode="NoResize" Width="700"
+        Name="frmView_Building" Loaded="frmView_Building_Loaded" PreviewKeyDown="frmView_Building_PreviewKeyDown"
+        WindowStartupLocation="CenterScreen"  Style="{DynamicResource WindowFormStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <!--<RowDefinition Height="50"/>-->
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Mã tòa nhà(*):" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <!--<Label Content="Tên tòa nhà(*):" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />-->
+            <Label Content="Địa chỉ:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <Label Content="Ghi chú:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+            <TextBox Name="txt_Building_Code" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <!--<TextBox Name="txt_Building_Name" IsHitTestVisible="False" Focusable="False" Height="42" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />-->
+            <TextBox Name="txtAddress" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+            <TextBox Name="txtNote" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Height="42" TextWrapping="Wrap" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1" Style="{DynamicResource BottomGrid}" Margin="0" Name="grdButton">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Thoát" Width="90" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnHuy" VerticalAlignment="Center" Click="btnHuy_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

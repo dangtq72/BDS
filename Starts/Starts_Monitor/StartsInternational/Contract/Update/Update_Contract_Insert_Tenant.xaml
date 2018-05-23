@@ -1,0 +1,395 @@
+﻿<Window x:Class="StartsInternational.Contract.Update_Contract_Tenant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:StartsInternational.Contract"
+        Title="SỬA HỢP ĐỒNG MÔI GIỚI BẤT ĐỘNG SẢN (cho thuê nhà)" Width="780"
+        Name="frmContract_Insert_Tenant" Loaded="frmContract_Insert_Tenant_Loaded_1"
+        KeyDown="frmContract_Insert_Tenant_KeyDown_1"
+        ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen"
+        Style="{DynamicResource WindowFormStyle}">
+    <Window.Resources>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="IsReadOnly" Value="True" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="Hợp đồng" Name="tabContract">
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="135"/>
+                        <RowDefinition Height="195"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Row="0" Margin="5,0,0,0" Header="Thông tin đối tượng bất động sản">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Tên căn hộ:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Mã căn hộ:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Kiểu nhà:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Diện tích:" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="200,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Vị trí:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Name="lbl_Estate_Name" Content="" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Name="lbl_Estate_Code" Content="" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Name="lbl_Estate_Type_Name" Content="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Name="lbl_Estate_Area" Content="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="250,0,3,0" VerticalAlignment="Center" />
+                            <Label Name="lbl_Address"   Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Height="185" Margin="5,10,0,0" Header="Bên B - BÊN YÊU CẦU MÔI GIỚI">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Tên tổ chức / Cá nhân(*):" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Địa chỉ(*):" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Chức vụ:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Mã số thuế:" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="300,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Điện thoại(*):" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Fax:" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Margin="300,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Đại diện(*):" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="CMND/HC:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Người SD(*):" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="300,0,3,0" VerticalAlignment="Center" />
+
+                            <TextBox Name="txtRenter_Name" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,2,40,2" VerticalAlignment="Center" />
+                            <Button Name="btnChose" Click="btnChose_Click" Width="35" Content="..." Grid.Column="1" Grid.Row="0" Margin="1,0,3,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            
+                            <TextBox Name="txtAddress" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtRepresentive" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtPosition" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Width="220" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtTaxCode" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Width="227" Margin="370,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtPhone" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Width="220" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtFax" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Width="227" Margin="370,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtIdentity_Card" IsHitTestVisible="False" Focusable="False" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Width="220" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtUsers" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Width="227" Margin="370,0,3,0" VerticalAlignment="Center" />
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="2" Height="140" Margin="5,10,0,0" Header="Thông tin hợp đồng">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Mã hợp đồng(*)" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <Label Content="Tên hợp đồng(*)" Visibility="Collapsed" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                            <TextBox Name="txtContract_Code" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtContract_Name" Visibility="Collapsed" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Content="Ngày ký hợp đồng(*)" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <DatePicker Name="dpContractDate" PreviewLostKeyboardFocus="dpContractDate_PreviewLostKeyboardFocus_1" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,3,0" />
+
+                            <Label Content="Loại tiền" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Center" />
+                            <ComboBox Name="cboCurrency" Width="120" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="250,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Content="Tiền thuê nhà(*)" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="380,0,0,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtPrice" TextChanged="TextBox_TextChanged" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="465,0,3,0" Width="105" VerticalAlignment="Center" />
+
+                            <Label Content="Thời gian thuê từ(*)" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <DatePicker Name="dpFromDate" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,3,0" />
+
+                            <Label Content="đến ngày(*)" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="150,0,3,0" VerticalAlignment="Center" />
+                            <DatePicker Name="dpToDate" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="250,0,3,0" />
+
+                            <Label Content="Trạng thái HĐ" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <ComboBox Name="cboStatusContract" SelectionChanged="cboStatusContract_SelectionChanged" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,3,0" />
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Phí môi giới" Name="tabFee">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.Resources>
+                        <ObjectDataProvider x:Key="StatusDataProvider" ObjectType="{x:Type local:StatusPayment}" MethodName="GetStatus" />
+                        <DataTemplate x:Key="DateTemplate" >
+                            <StackPanel Width="20" Height="30">
+                                <Border Background="LightBlue" BorderBrush="Black" BorderThickness="1">
+                                    <TextBlock Text="{Binding Pay_Date_Expected, StringFormat={}{0:MMM}}" FontSize="8" HorizontalAlignment="Center" />
+                                </Border>
+                                <Border Background="White" BorderBrush="Black" BorderThickness="1">
+                                    <TextBlock Text="{Binding Pay_Date_Expected, StringFormat={}{0:yyyy}}" FontSize="8" FontWeight="Bold" HorizontalAlignment="Center" />
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                        <!--DataTemplate for the Published Date column when in edit mode. -->
+                        <DataTemplate x:Key="EditingDateTemplate">
+                            <DatePicker SelectedDate="{Binding Pay_Date_Expected}"  />
+                        </DataTemplate>
+                    </Grid.Resources>
+
+                    <GroupBox Grid.Row="0" Height="75" Margin="5,10,0,0" Header="Thông tin Phí môi giới">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Phí môi giới(*)" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtFee" PreviewLostKeyboardFocus="txtFee_PreviewLostKeyboardFocus" Grid.Column="1" Width="120" Grid.Row="0" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Content="Kỳ hạn thanh toán" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" />
+                            <ComboBox Name="cboTerm" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,0,0" SelectionChanged="cboTerm_SelectionChanged_1"/>
+
+                            <Label Content="Số tiền 1 lần TT" Name="lblFeePay" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="135,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtFeeOnePay" IsEnabled="False" TextChanged="TextBox_TextChanged" Width="120" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="235,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Content="Số lần thanh toán" Visibility="Collapsed" Name="lblNumberPay" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtNumberPay" Visibility="Collapsed" TextChanged="TextBox_TextChanged" Width="120" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="460,0,3,0" VerticalAlignment="Center" />
+
+                            <Button Content="Tính phí" Visibility="Visible" Name="btnCall" Click="btnCall_Click_1" Foreground="Red" FontWeight="Bold" Width="120" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="235,0,0,0" />
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Height="250" Margin="5,10,0,0"  Header="Thông tin thanh toán">
+                        <Grid>
+                            <DataGrid Name="dgrFee" Height="220" PreviewKeyDown="dgrFee_PreviewKeyDown_1"
+                              CanUserAddRows="False" AutoGenerateColumns="False" CellEditEnding="dgrFee_CellEditEnding">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Number_Payment}" IsReadOnly="True" Width="60" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Lần TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <!--Pay_Date_Expected-->
+                                    <DataGridTemplateColumn Width="120" >
+                                        <DataGridTemplateColumn.Header>
+                                            <Label Content="Thời gian TT" FontWeight="Bold"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4" Text="{Binding Pay_Date_Expected,StringFormat=dd/MM/yyyy}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.CellEditingTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding Pay_Date_Expected,StringFormat=d}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellEditingTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Fee_Expected,Mode=TwoWay,StringFormat=#\,##0}" Width="140"
+                                                    ElementStyle="{StaticResource RightAlignStyle}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Số tiền phải TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Fee,Mode=TwoWay,StringFormat=#\,##0}" Width="140"
+                                                    ElementStyle="{StaticResource RightAlignStyle}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Số tiền đã TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Debit_Amount,StringFormat=#\,##0}" Width="130"
+                                                    ElementStyle="{StaticResource RightAlignStyle}" IsReadOnly="True">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Còn nợ" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridComboBoxColumn SelectedValueBinding="{Binding Pay_Status}" Width="125" SelectedValuePath="StatusId"
+                                           DisplayMemberPath="StatusName" ItemsSource="{Binding Source={StaticResource StatusDataProvider}}">
+                                        <DataGridComboBoxColumn.Header>
+                                            <Label Content="Trạng thái TT" FontWeight="Bold"/>
+                                        </DataGridComboBoxColumn.Header>
+                                    </DataGridComboBoxColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Gia hạn hợp đồng" Name="tabExtend">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.Resources>
+                        <ObjectDataProvider x:Key="StatusDataProvider_Extend" ObjectType="{x:Type local:StatusPayment}" MethodName="GetStatus" />
+                        <DataTemplate x:Key="DateTemplate_Extend" >
+                            <StackPanel Width="20" Height="30">
+                                <Border Background="LightBlue" BorderBrush="Black" BorderThickness="1">
+                                    <TextBlock Text="{Binding Pay_Date_Expected, StringFormat={}{0:MMM}}" FontSize="8" HorizontalAlignment="Center" />
+                                </Border>
+                                <Border Background="White" BorderBrush="Black" BorderThickness="1">
+                                    <TextBlock Text="{Binding Pay_Date_Expected, StringFormat={}{0:yyyy}}" FontSize="8" FontWeight="Bold" HorizontalAlignment="Center" />
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                        <!--DataTemplate for the Published Date column when in edit mode. -->
+                        <DataTemplate x:Key="EditingDateTemplate_Extend">
+                            <DatePicker SelectedDate="{Binding Pay_Date_Expected}"  />
+                        </DataTemplate>
+                    </Grid.Resources>
+
+                    <GroupBox Grid.Row="0" Height="105" Margin="5,10,0,0" Header="Phí môi giới gia hạn">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Thời gian thuê từ(*)" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <DatePicker Name="dpFromDate_Extend" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,3,0" />
+
+                            <Label Content="đến ngày(*)" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="150,0,3,0" VerticalAlignment="Center" />
+                            <DatePicker Name="dpToDate_Extend" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="235,0,3,0" />
+
+                            <Label Content="Phí môi giới(*)" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtFee_Extend" PreviewLostKeyboardFocus="txtFee_Extend_PreviewLostKeyboardFocus" Grid.Column="1" Width="120" Grid.Row="1" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Margin="0,0,3,0" VerticalAlignment="Center" />
+
+                            <Label Content="Số tiền 1 lần TT" Name="lblFeePay_Extend" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="135,0,3,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtFeeOnePay_Extend" IsEnabled="False" TextChanged="TextBox_TextChanged" Width="120" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="235,0,3,0" VerticalAlignment="Center" />
+
+                            
+                            <Label Content="Kỳ hạn thanh toán" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" />
+                            <ComboBox Name="cboTerm_Extend" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Margin="0,0,0,0" SelectionChanged="cboTerm_Extend_SelectionChanged"/>
+
+                           
+                            <Label Content="Số lần thanh toán" Visibility="Collapsed" Name="lblNumberPay_Extend" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Center" />
+                            <TextBox Name="txtNumberPay_Extend" Visibility="Collapsed" TextChanged="TextBox_TextChanged" Width="120" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="460,0,3,0" VerticalAlignment="Center" />
+
+                            <Button Content="Tính phí" Visibility="Visible" Name="btnCall_Extend" Click="btnCall_Extend_Click" Foreground="Red" FontWeight="Bold" Width="120" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="235,0,0,0" />
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Height="250" Margin="5,10,0,0"  Header="Thông tin thanh toán gia hạn HĐ">
+                        <Grid>
+                            <DataGrid Name="dgrFee_Extend" Height="220" PreviewKeyDown="dgrFee_Extend_PreviewKeyDown"
+                              CanUserAddRows="False" AutoGenerateColumns="False" CellEditEnding="dgrFee_Extend_CellEditEnding">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Number_Payment}" IsReadOnly="True" Width="60" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Lần TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <!--Pay_Date_Expected-->
+                                    <DataGridTemplateColumn Width="120" >
+                                        <DataGridTemplateColumn.Header>
+                                            <Label Content="Thời gian TT" FontWeight="Bold"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4"
+                                                           Text="{Binding Pay_Date_Expected,StringFormat=dd/MM/yyyy}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.CellEditingTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding Pay_Date_Expected,StringFormat=d}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellEditingTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Fee_Expected,Mode=TwoWay,StringFormat=#\,##0}" Width="140"
+                                                    ElementStyle="{StaticResource RightAlignStyle}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Số tiền phải TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Fee,Mode=TwoWay,StringFormat=#\,##0}" Width="140"
+                                                    ElementStyle="{StaticResource RightAlignStyle}">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Số tiền đã TT" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridTextColumn FontWeight="Bold" Binding="{Binding Debit_Amount,StringFormat=#\,##0}" Width="130"
+                                                    ElementStyle="{StaticResource RightAlignStyle}" IsReadOnly="True">
+                                        <DataGridTextColumn.Header>
+                                            <Label Content="Còn nợ" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridComboBoxColumn SelectedValueBinding="{Binding Pay_Status}" Width="125" SelectedValuePath="StatusId"
+                                           DisplayMemberPath="StatusName" ItemsSource="{Binding Source={StaticResource StatusDataProvider_Extend}}">
+                                        <DataGridComboBoxColumn.Header>
+                                            <Label Content="Trạng thái TT" FontWeight="Bold"/>
+                                        </DataGridComboBoxColumn.Header>
+                                    </DataGridComboBoxColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Grid Grid.Row="1" Style="{DynamicResource BottomGrid}" Margin="0" Name="grdButton">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Chấp nhận" Width="90" HorizontalAlignment="Left" VerticalAlignment="Center" Name="btnChapNhan" Margin="0,0,0,0" Click="btnChapNhan_Click_1"/>
+                <Button Content="Thoát" Width="90" HorizontalAlignment="Left" Margin="100,0,0,0" Name="btnHuy" VerticalAlignment="Center" Click="btnHuy_Click_1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

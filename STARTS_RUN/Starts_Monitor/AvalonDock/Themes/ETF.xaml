@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="/NewFrontEnd;component/Themes/Border.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Button.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Calendar.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/CheckBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ComboBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/TextBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ComboBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/DataGrid.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/DatePicker.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/DockTheme.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Expander.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Grid.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/GroupBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Label.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ListBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ListView.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/MainWindowETF.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/PasswordBox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ProgressBar.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/RadioButton.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ScrollViewer.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/StatusBar.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/TabControl.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Textbox.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/ToggleButton.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/TreeView.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/WindowStyle.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/WindowStyle_EX.xaml"/>
+        <ResourceDictionary Source="/NewFrontEnd;component/Themes/Combine.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

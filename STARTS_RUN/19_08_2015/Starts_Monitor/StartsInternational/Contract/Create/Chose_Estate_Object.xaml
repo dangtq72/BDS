@@ -1,0 +1,51 @@
+﻿<Window x:Class="StartsInternational.Contract.Create.Chose_Estate_Object"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chọn đối tượng BĐS" Height="400" Width="850"
+        Name="frmChose_Estate_Object" Loaded="frmChose_Estate_Object_Loaded"
+        KeyDown="frmChose_Estate_Object_KeyDown" WindowStartupLocation="CenterScreen"
+        Style="{DynamicResource WindowFormStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <Label Content="Mã BĐS:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtCode" Width="150" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Loại:" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox Width="150" Name="cboType" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Label Content="Trạng thái:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox Width="120" Name="cboStatus" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <Button Content="Tìm kiếm" Name="btnSearch" Click="btnSearch_Click" Width="100" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid  Name="dgrEstate" Grid.Row ="1"  AutoGenerateColumns="False"
+                   LoadingRow="dgrEstate_LoadingRow" PreviewKeyDown="dgrEstate_PreviewKeyDown"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Estate_Name}" IsReadOnly="True" Header="Tên BĐS" MinWidth="250"/>
+                <DataGridTextColumn Binding="{Binding Estate_Code}" IsReadOnly="True" Header="Mã BĐS" MinWidth="100"/>
+                <DataGridTextColumn Binding="{Binding Building_Name}" IsReadOnly="True" Header="Tòa nhà" MinWidth="150"/>
+                <DataGridTextColumn Binding="{Binding Estate_Type_Name}" IsReadOnly="True" Header="Loại" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding Status_Name}" IsReadOnly="True" Header="Trạng thái" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding Area}" IsReadOnly="True" Header="Diện tích" MinWidth="150" />
+                <DataGridTextColumn Binding="{Binding Note}" IsReadOnly="True" Header="Ghi chú" MinWidth="200" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,1653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAppService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ObjInfo" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppService_AllCode_Gets_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_Gets" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_AllCode_Gets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_GetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_AllCode_GetBy_CdNameCdType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_GetBy_CdNameCdType" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_AllCode_GetBy_CdNameCdType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_GetBy_CdNameCdTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_AllCode_CheckWCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_CheckWCF" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_AllCode_CheckWCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllCode_CheckWCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Current_Date_Computer_Run_Service_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Current_Date_Computer_Run_Service" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Current_Date_Computer_Run_Service_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Current_Date_Computer_Run_ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetVersionInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetVersionInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetUpdateList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdateList" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetUpdateList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Building_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Building_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Building_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Building_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetBuildingInEstate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildingInEstate" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetBuildingInEstate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildingInEstateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Building_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Building_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Building_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Building_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Building_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Building_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Building_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetByStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetByStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetByStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_EstateObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_EstateObject" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_EstateObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_EstateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetById" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_RenterTenant_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_RenterTenant" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_RenterTenant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_RenterTenantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_Type_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_Type" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetBy_Type_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetBy_TypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Render_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Render_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Render_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Render_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_ByContract_Type_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_ByContract_Type" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_ByContract_Type_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_ByContract_TypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_DenHanTB_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_DenHanTB" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_DenHanTB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_DenHanTBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Convert_Dola_InputMessage">
+    <wsdl:part name="parameters" element="tns:Convert_Dola" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Convert_Dola_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Convert_DolaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Max_Contract_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Max_Contract_Id" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Max_Contract_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Max_Contract_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Contract_Exprire_Date_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Contract_Exprire_Date" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Contract_Exprire_Date_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Contract_Exprire_DateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Update_Status_Contract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Status_Contract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Update_Status_Contract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Status_ContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_ByExtend_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_ByExtend" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Search_ByExtend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Search_ByExtendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Get_EstateByContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Get_EstateByContract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Get_EstateByContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Get_EstateByContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetByCode" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_GetByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_GetByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Contract_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Contract_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_GetById" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_GetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Check_In_Contract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Check_In_Contract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Customer_Check_In_Contract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Customer_Check_In_ContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetById" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetType_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetType" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetByObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetByObject" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetByObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetByObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Check_Exit_EstateInContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Check_Exit_EstateInContract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Check_Exit_EstateInContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Check_Exit_EstateInContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetCbo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetCbo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Estate_Object_GetCbo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estate_Object_GetCboResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_GetByContractId_InputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_GetByContractId" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Extend_Contract_GetByContractId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Extend_Contract_GetByContractIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Number_ExtendContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Number_ExtendContract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Number_ExtendContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Number_ExtendContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByContract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByObject" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_DeleteByContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_DeleteByContract" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_DeleteByContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_DeleteByContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByObjectType_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByObjectType" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Revenue_GetByObjectType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Revenue_GetByObjectTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Report_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_Report" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Fees_Report_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fees_ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Function_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Function_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_Group_DelByGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:Function_Group_DelByGroup" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_Group_DelByGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Function_Group_DelByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Function_ByGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Function_ByGroup" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Get_Function_ByGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Function_ByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_Group_Insert_Batch_InputMessage">
+    <wsdl:part name="parameters" element="tns:Function_Group_Insert_Batch" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Function_Group_Insert_Batch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Function_Group_Insert_BatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GroupUser_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GroupUser_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_trace_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:trace_Search" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_trace_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:trace_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Trace_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Trace_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Trace_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Trace_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Login" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Get_All_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Get_All" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Get_All_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Get_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_Last_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update_Last_Login" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_Last_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update_Last_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_Pass_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update_Pass" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_Pass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update_PassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Update" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Send_Users_Get_MenuItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:Send_Users_Get_MenuItem" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Send_Users_Get_MenuItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Send_Users_Get_MenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_DelByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_DelByUser" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_DelByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_DelByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Delete_User_Right_By_UserFuntion_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_User_Right_By_UserFuntion" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_Delete_User_Right_By_UserFuntion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_User_Right_By_UserFuntionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_Insert_Barth_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_Insert_Barth" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_Insert_Barth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_Insert_BarthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_GetByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_GetByUser" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_User_Rights_GetByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_Rights_GetByUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppService">
+    <wsdl:operation name="AllCode_Gets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/AllCode_Gets" message="tns:IAppService_AllCode_Gets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/AllCode_GetsResponse" message="tns:IAppService_AllCode_Gets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllCode_GetBy_CdNameCdType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/AllCode_GetBy_CdNameCdType" message="tns:IAppService_AllCode_GetBy_CdNameCdType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/AllCode_GetBy_CdNameCdTypeResponse" message="tns:IAppService_AllCode_GetBy_CdNameCdType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllCode_CheckWCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/AllCode_CheckWCF" message="tns:IAppService_AllCode_CheckWCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/AllCode_CheckWCFResponse" message="tns:IAppService_AllCode_CheckWCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Current_Date_Computer_Run_Service">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Get_Current_Date_Computer_Run_Service" message="tns:IAppService_Get_Current_Date_Computer_Run_Service_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Get_Current_Date_Computer_Run_ServiceResponse" message="tns:IAppService_Get_Current_Date_Computer_Run_Service_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetVersionInfo" message="tns:IAppService_GetVersionInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetVersionInfoResponse" message="tns:IAppService_GetVersionInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetUpdateList" message="tns:IAppService_GetUpdateList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetUpdateListResponse" message="tns:IAppService_GetUpdateList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetFile" message="tns:IAppService_GetFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetFileResponse" message="tns:IAppService_GetFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Building_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Building_GetAll" message="tns:IAppService_Building_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Building_GetAllResponse" message="tns:IAppService_Building_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Building_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Building_Delete" message="tns:IAppService_Building_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Building_DeleteResponse" message="tns:IAppService_Building_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingInEstate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetBuildingInEstate" message="tns:IAppService_GetBuildingInEstate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetBuildingInEstateResponse" message="tns:IAppService_GetBuildingInEstate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Building_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Building_Update" message="tns:IAppService_Building_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Building_UpdateResponse" message="tns:IAppService_Building_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Building_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Building_Insert" message="tns:IAppService_Building_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Building_InsertResponse" message="tns:IAppService_Building_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Building_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Building_Search" message="tns:IAppService_Building_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Building_SearchResponse" message="tns:IAppService_Building_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetAll" message="tns:IAppService_Contract_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetAllResponse" message="tns:IAppService_Contract_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetByStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetByStatus" message="tns:IAppService_Contract_GetByStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetByStatusResponse" message="tns:IAppService_Contract_GetByStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_EstateObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_EstateObject" message="tns:IAppService_Contract_GetBy_EstateObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_EstateObjectResponse" message="tns:IAppService_Contract_GetBy_EstateObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetById" message="tns:IAppService_Contract_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetByIdResponse" message="tns:IAppService_Contract_GetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_RenterTenant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_RenterTenant" message="tns:IAppService_Contract_GetBy_RenterTenant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_RenterTenantResponse" message="tns:IAppService_Contract_GetBy_RenterTenant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_Type">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_Type" message="tns:IAppService_Contract_GetBy_Type_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetBy_TypeResponse" message="tns:IAppService_Contract_GetBy_Type_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Render_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Render_Search" message="tns:IAppService_Contract_Render_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_Render_SearchResponse" message="tns:IAppService_Contract_Render_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_ByContract_Type">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Search_ByContract_Type" message="tns:IAppService_Contract_Search_ByContract_Type_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_Search_ByContract_TypeResponse" message="tns:IAppService_Contract_Search_ByContract_Type_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Search" message="tns:IAppService_Contract_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_SearchResponse" message="tns:IAppService_Contract_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_DenHanTB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Search_DenHanTB" message="tns:IAppService_Contract_Search_DenHanTB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_Search_DenHanTBResponse" message="tns:IAppService_Contract_Search_DenHanTB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Convert_Dola">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Convert_Dola" message="tns:IAppService_Convert_Dola_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Convert_DolaResponse" message="tns:IAppService_Convert_Dola_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Max_Contract_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Get_Max_Contract_Id" message="tns:IAppService_Get_Max_Contract_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Get_Max_Contract_IdResponse" message="tns:IAppService_Get_Max_Contract_Id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Contract_Exprire_Date">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Get_Contract_Exprire_Date" message="tns:IAppService_Get_Contract_Exprire_Date_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Get_Contract_Exprire_DateResponse" message="tns:IAppService_Get_Contract_Exprire_Date_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Contract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Update_Status_Contract" message="tns:IAppService_Update_Status_Contract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Update_Status_ContractResponse" message="tns:IAppService_Update_Status_Contract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_ByExtend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Search_ByExtend" message="tns:IAppService_Contract_Search_ByExtend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_Search_ByExtendResponse" message="tns:IAppService_Contract_Search_ByExtend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Get_EstateByContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Get_EstateByContract" message="tns:IAppService_Contract_Get_EstateByContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_Get_EstateByContractResponse" message="tns:IAppService_Contract_Get_EstateByContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_GetByCode" message="tns:IAppService_Contract_GetByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_GetByCodeResponse" message="tns:IAppService_Contract_GetByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Delete" message="tns:IAppService_Contract_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_DeleteResponse" message="tns:IAppService_Contract_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Update" message="tns:IAppService_Contract_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_UpdateResponse" message="tns:IAppService_Contract_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Contract_Insert" message="tns:IAppService_Contract_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Contract_InsertResponse" message="tns:IAppService_Contract_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_GetAll" message="tns:IAppService_Customer_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_GetAllResponse" message="tns:IAppService_Customer_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_GetById" message="tns:IAppService_Customer_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_GetByIdResponse" message="tns:IAppService_Customer_GetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_Delete" message="tns:IAppService_Customer_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_DeleteResponse" message="tns:IAppService_Customer_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_Update" message="tns:IAppService_Customer_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_UpdateResponse" message="tns:IAppService_Customer_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_Insert" message="tns:IAppService_Customer_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_InsertResponse" message="tns:IAppService_Customer_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_Search" message="tns:IAppService_Customer_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_SearchResponse" message="tns:IAppService_Customer_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Check_In_Contract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Customer_Check_In_Contract" message="tns:IAppService_Customer_Check_In_Contract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Customer_Check_In_ContractResponse" message="tns:IAppService_Customer_Check_In_Contract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetAll" message="tns:IAppService_Estate_Object_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetAllResponse" message="tns:IAppService_Estate_Object_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetStatus" message="tns:IAppService_Estate_Object_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetStatusResponse" message="tns:IAppService_Estate_Object_GetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetById" message="tns:IAppService_Estate_Object_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetByIdResponse" message="tns:IAppService_Estate_Object_GetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetType" message="tns:IAppService_Estate_Object_GetType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetTypeResponse" message="tns:IAppService_Estate_Object_GetType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetByObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetByObject" message="tns:IAppService_Estate_Object_GetByObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetByObjectResponse" message="tns:IAppService_Estate_Object_GetByObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_Update" message="tns:IAppService_Estate_Object_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_UpdateResponse" message="tns:IAppService_Estate_Object_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_Delete" message="tns:IAppService_Estate_Object_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_DeleteResponse" message="tns:IAppService_Estate_Object_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_Insert" message="tns:IAppService_Estate_Object_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_InsertResponse" message="tns:IAppService_Estate_Object_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Exit_EstateInContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Check_Exit_EstateInContract" message="tns:IAppService_Check_Exit_EstateInContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Check_Exit_EstateInContractResponse" message="tns:IAppService_Check_Exit_EstateInContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_Search" message="tns:IAppService_Estate_Object_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_SearchResponse" message="tns:IAppService_Estate_Object_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetCbo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetCbo" message="tns:IAppService_Estate_Object_GetCbo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Estate_Object_GetCboResponse" message="tns:IAppService_Estate_Object_GetCbo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_Insert" message="tns:IAppService_Extend_Contract_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_InsertResponse" message="tns:IAppService_Extend_Contract_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_Update" message="tns:IAppService_Extend_Contract_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_UpdateResponse" message="tns:IAppService_Extend_Contract_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_GetByContractId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_GetByContractId" message="tns:IAppService_Extend_Contract_GetByContractId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Extend_Contract_GetByContractIdResponse" message="tns:IAppService_Extend_Contract_GetByContractId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Number_ExtendContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Get_Number_ExtendContract" message="tns:IAppService_Get_Number_ExtendContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Get_Number_ExtendContractResponse" message="tns:IAppService_Get_Number_ExtendContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetAll" message="tns:IAppService_Fees_Revenue_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetAllResponse" message="tns:IAppService_Fees_Revenue_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByContract" message="tns:IAppService_Fees_Revenue_GetByContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByContractResponse" message="tns:IAppService_Fees_Revenue_GetByContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByObject" message="tns:IAppService_Fees_Revenue_GetByObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByObjectResponse" message="tns:IAppService_Fees_Revenue_GetByObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_Update" message="tns:IAppService_Fees_Revenue_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_UpdateResponse" message="tns:IAppService_Fees_Revenue_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_Insert" message="tns:IAppService_Fees_Revenue_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_InsertResponse" message="tns:IAppService_Fees_Revenue_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_DeleteByContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_DeleteByContract" message="tns:IAppService_Fees_Revenue_DeleteByContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_DeleteByContractResponse" message="tns:IAppService_Fees_Revenue_DeleteByContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByObjectType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByObjectType" message="tns:IAppService_Fees_Revenue_GetByObjectType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_Revenue_GetByObjectTypeResponse" message="tns:IAppService_Fees_Revenue_GetByObjectType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Report">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Fees_Report" message="tns:IAppService_Fees_Report_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Fees_ReportResponse" message="tns:IAppService_Fees_Report_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Function_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Function_GetAll" message="tns:IAppService_Function_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Function_GetAllResponse" message="tns:IAppService_Function_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Function_Group_DelByGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Function_Group_DelByGroup" message="tns:IAppService_Function_Group_DelByGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Function_Group_DelByGroupResponse" message="tns:IAppService_Function_Group_DelByGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Function_ByGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Get_Function_ByGroup" message="tns:IAppService_Get_Function_ByGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Get_Function_ByGroupResponse" message="tns:IAppService_Get_Function_ByGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Function_Group_Insert_Batch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Function_Group_Insert_Batch" message="tns:IAppService_Function_Group_Insert_Batch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Function_Group_Insert_BatchResponse" message="tns:IAppService_Function_Group_Insert_Batch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GroupUser_GetAll" message="tns:IAppService_GroupUser_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GroupUser_GetAllResponse" message="tns:IAppService_GroupUser_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GroupUser_Delete" message="tns:IAppService_GroupUser_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GroupUser_DeleteResponse" message="tns:IAppService_GroupUser_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GroupUser_Update" message="tns:IAppService_GroupUser_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GroupUser_UpdateResponse" message="tns:IAppService_GroupUser_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GroupUser_Insert" message="tns:IAppService_GroupUser_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GroupUser_InsertResponse" message="tns:IAppService_GroupUser_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="trace_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/trace_Search" message="tns:IAppService_trace_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/trace_SearchResponse" message="tns:IAppService_trace_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Trace_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Trace_Insert" message="tns:IAppService_Trace_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Trace_InsertResponse" message="tns:IAppService_Trace_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Login" message="tns:IAppService_User_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_LoginResponse" message="tns:IAppService_User_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Get_All">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Get_All" message="tns:IAppService_User_Get_All_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Get_AllResponse" message="tns:IAppService_User_Get_All_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Update_Last_Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Update_Last_Login" message="tns:IAppService_User_Update_Last_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Update_Last_LoginResponse" message="tns:IAppService_User_Update_Last_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Update_Pass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Update_Pass" message="tns:IAppService_User_Update_Pass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Update_PassResponse" message="tns:IAppService_User_Update_Pass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Delete" message="tns:IAppService_User_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_DeleteResponse" message="tns:IAppService_User_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Insert" message="tns:IAppService_User_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_InsertResponse" message="tns:IAppService_User_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Update" message="tns:IAppService_User_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_UpdateResponse" message="tns:IAppService_User_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Send_Users_Get_MenuItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Send_Users_Get_MenuItem" message="tns:IAppService_Send_Users_Get_MenuItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Send_Users_Get_MenuItemResponse" message="tns:IAppService_Send_Users_Get_MenuItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_DelByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Rights_DelByUser" message="tns:IAppService_User_Rights_DelByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Rights_DelByUserResponse" message="tns:IAppService_User_Rights_DelByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_User_Right_By_UserFuntion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/Delete_User_Right_By_UserFuntion" message="tns:IAppService_Delete_User_Right_By_UserFuntion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/Delete_User_Right_By_UserFuntionResponse" message="tns:IAppService_Delete_User_Right_By_UserFuntion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_Insert_Barth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Rights_Insert_Barth" message="tns:IAppService_User_Rights_Insert_Barth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Rights_Insert_BarthResponse" message="tns:IAppService_User_Rights_Insert_Barth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_GetByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/User_Rights_GetByUser" message="tns:IAppService_User_Rights_GetByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/User_Rights_GetByUserResponse" message="tns:IAppService_User_Rights_GetByUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IAppService" type="tns:IAppService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAppService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AllCode_Gets">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/AllCode_Gets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllCode_GetBy_CdNameCdType">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/AllCode_GetBy_CdNameCdType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllCode_CheckWCF">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/AllCode_CheckWCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Current_Date_Computer_Run_Service">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Get_Current_Date_Computer_Run_Service" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInfo">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GetVersionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateList">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GetUpdateList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GetFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Building_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Building_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Building_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Building_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingInEstate">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GetBuildingInEstate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Building_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Building_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Building_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Building_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Building_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Building_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetByStatus">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_EstateObject">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetBy_EstateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetById">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_RenterTenant">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetBy_RenterTenant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetBy_Type">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetBy_Type" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Render_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Render_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_ByContract_Type">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Search_ByContract_Type" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_DenHanTB">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Search_DenHanTB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Convert_Dola">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Convert_Dola" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Max_Contract_Id">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Get_Max_Contract_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Contract_Exprire_Date">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Get_Contract_Exprire_Date" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Contract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Update_Status_Contract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Search_ByExtend">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Search_ByExtend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Get_EstateByContract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Get_EstateByContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_GetByCode">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_GetByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contract_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Contract_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_GetById">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_GetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customer_Check_In_Contract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Customer_Check_In_Contract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetStatus">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetById">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetType">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetByObject">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetByObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Exit_EstateInContract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Check_Exit_EstateInContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estate_Object_GetCbo">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Estate_Object_GetCbo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Extend_Contract_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Extend_Contract_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Extend_Contract_GetByContractId">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Extend_Contract_GetByContractId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Number_ExtendContract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Get_Number_ExtendContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByContract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_GetByContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByObject">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_GetByObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_DeleteByContract">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_DeleteByContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Revenue_GetByObjectType">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Revenue_GetByObjectType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fees_Report">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Fees_Report" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Function_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Function_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Function_Group_DelByGroup">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Function_Group_DelByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Function_ByGroup">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Get_Function_ByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Function_Group_Insert_Batch">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Function_Group_Insert_Batch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GroupUser_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GroupUser_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GroupUser_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/GroupUser_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trace_Search">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/trace_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trace_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Trace_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Login">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Get_All">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Get_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update_Last_Login">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Update_Last_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update_Pass">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Update_Pass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Insert">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Send_Users_Get_MenuItem">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Send_Users_Get_MenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_DelByUser">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Rights_DelByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_User_Right_By_UserFuntion">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/Delete_User_Right_By_UserFuntion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_Insert_Barth">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Rights_Insert_Barth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Rights_GetByUser">
+      <soap12:operation soapAction="http://tempuri.org/IAppService/User_Rights_GetByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppService">
+    <wsdl:port name="NetTcpBinding_IAppService" binding="tns:NetTcpBinding_IAppService">
+      <soap12:address location="net.tcp://localhost:8888/StartsMonitor" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8888/StartsMonitor</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

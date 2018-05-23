@@ -1,0 +1,72 @@
+﻿<ad:DockableContent x:Class="StartsInternational.TraceDisplay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"    
+        Title="Thông tin thay đổi"
+        x:Name="frmtracedisplay" Height="500" Width="1024" Loaded="frmtracedisplay_Loaded" 
+        PreviewKeyDown="frmtracedisplay_PreviewKeyDown" >
+    <Grid Background="#F4F4F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#171e28" BorderThickness="1,1,1,0">
+            <Grid Name="grdtop" Style="{DynamicResource BottomGrid}">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Label VerticalAlignment="Center" Content="Tên bảng:" Margin="10,0,0,0"/>
+                    <ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                              x:Name="cboTenbang" TabIndex="1" Width="150"/>
+
+                    <Label VerticalAlignment="Center" Content="Người thực hiện:" Margin="10,0,0,0"/>
+                    <ComboBox VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                              x:Name="cboNguoidung" TabIndex="2" Width="120"/>
+
+                    <Label VerticalAlignment="Center" Content="Từ ngày:" Margin="10,0,0,0"/>
+                    <DatePicker Grid.Column="5" Width="100" Name="dtTungay" VerticalAlignment="Center"/>
+
+                    <Label VerticalAlignment="Center" Content="Đến ngày:" Margin="10,0,0,0"/>
+                    <DatePicker Grid.Column="7" Width="100" Name="dtDenngay" VerticalAlignment="Center"/>
+
+                    <Button VerticalAlignment="Center" Margin="10,0,0,0" Name="btnTim" 
+                            TabIndex="7" Click="btnTim_Click" Content="Tìm kiếm" Width="70"/>
+                    <Button Name="btnRefreshMsgOut" Content="Làm mới" Margin="35,0,0,0" Width="75" 
+                             VerticalAlignment="Center" Click="btnRefreshMsgOut_Click" Visibility="Collapsed"/>
+                    <!--<Button Grid.Column="8" Content="{DynamicResource btnRefresh}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0" Name="btnRe" TabIndex="8" Click="btnRe_Click" />-->
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <DataGrid Margin="0,0,0,0"  CanUserAddRows="False" Grid.Row="1"  AutoGenerateColumns="False"  RowHeaderWidth="30"
+                  Name="gridtrace" PreviewKeyDown="gridtrace_PreviewKeyDown" LoadingRow="gridtrace_LoadingRow">
+
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="gridtrace_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Trace_Id}" ElementStyle="{DynamicResource LeftAlignStyle}"  IsReadOnly="True" Header="UserID" Width="50" Visibility="Hidden" />
+                <DataGridTextColumn Header="Tên Bảng" Binding="{Binding Trace_Object}"  ElementStyle="{DynamicResource LeftAlignStyle}" IsReadOnly="True" MinWidth="250"/>
+                <DataGridTextColumn Header="Tên Thủ Tục" Binding="{Binding Trace_Procedure}" ElementStyle="{DynamicResource LeftAlignStyle}"  IsReadOnly="True" MinWidth="250" />
+                <DataGridTextColumn Header="Người Thực Hiện" Binding="{Binding Trace_User}"  ElementStyle="{DynamicResource LeftAlignStyle}" IsReadOnly="True" Width="200" />
+                <DataGridTextColumn Header="Thời Gian" Binding="{Binding Trace_Datetime,StringFormat=dd/MM/yyyy}" ElementStyle="{DynamicResource CenterAlignStyle}" IsReadOnly="True" Width="100*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" BorderBrush="#171e28" BorderThickness="1,0,1,1">
+            <Grid Style="{DynamicResource BottomGrid}">
+                <Label Name="lblTotalPage" Content="Tổng số trang:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Button Name="btnPrivewMsgOut" Content="&lt;" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center" Click="PrivewPage_Click"/>
+                    <TextBox Name="txtPageOut" Margin="5,0,0,0" Width="50" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Button Name="btnNextMsgOut" Margin="5,0,0,0" Content="&gt;" Width="30" VerticalAlignment="Center" Click="NextPage_Click"/>
+                </StackPanel>
+                <Label Margin="0,0,60,0" Content="Số bản ghi trên một trang:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox Name ="cboTotalRow"  Width="50" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="0,0,10,0" SelectionChanged="CboTotalRow_OnSelectionChanged "/>
+            </Grid>
+        </Border>
+    </Grid>
+</ad:DockableContent>

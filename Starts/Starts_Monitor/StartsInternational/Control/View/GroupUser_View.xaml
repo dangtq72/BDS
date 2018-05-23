@@ -1,0 +1,67 @@
+﻿<Window x:Class="StartsInternational.GroupUser_View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Xem chi tiết nhóm người dùng" Style="{DynamicResource WindowFormStyle}"
+        Height="470" Width="700" WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="115"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Thông tin nhóm người dùng" Name="grbStatus" Margin="6" Height="105">
+            <Grid Height="75">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="50"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Tên nhóm người dùng" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                <Label Content="Ghi chú" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                <TextBox Name="txtName" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Margin="0,0,15,0" HorizontalAlignment="Stretch" TabIndex="1" MaxLength="100" IsReadOnly="True"/>
+                <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,15,0" Name="txtNotes" VerticalAlignment="Center" Height="45" TextWrapping="Wrap"  MaxLength="245" TabIndex="2" IsReadOnly="True"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Margin="6,0,6,6" Header="Danh sách người dùng">
+            <DataGrid Margin="3" CanUserAddRows="False" AutoGenerateColumns="False" Name="dgrUser" LoadingRow="dgrUser_LoadingRow" PreviewKeyDown="dgrUser_PreviewKeyDown">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding User_Name}" IsReadOnly="True" Width="120" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Tên đăng nhập" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding FullName}" IsReadOnly="True" Width="120" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Tên đầy đủ" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Group_Name}" IsReadOnly="True" Width="120" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Nhóm người SD" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Last_Login}" IsReadOnly="True" Width="250" ElementStyle="{StaticResource CenterAlignStyle}" CellStyle="{DynamicResource TextCell}">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Lần đăng nhập cuối cùng" VerticalAlignment="Center" Height="28" FontWeight="Bold"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <Grid Grid.Row="2" Style="{DynamicResource BottomGrid}" Margin="0">
+            <Button Content="Thoát"  Name="btnCancel" VerticalAlignment="Center" Width="70" HorizontalAlignment="Center" Click="btnCancel_Click" TabIndex="3"/>
+        </Grid>
+
+    </Grid>
+</Window>

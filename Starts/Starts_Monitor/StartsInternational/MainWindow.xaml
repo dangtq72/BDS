@@ -1,0 +1,201 @@
+﻿<Window x:Class="StartsInternational.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Style="{DynamicResource MainCombine}"
+        Icon="/StartsInternational;component/Images/starts_logo.ico"
+        MaxWidth="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" 
+        MaxHeight="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" 
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+        xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+        Title="Starts Monitor" Height="550" Width="1024" Loaded="Window_Loaded_1" KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+
+        <Style x:Key="mainSeparator" TargetType="{x:Type Separator}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="90"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DockETF" TargetType="{x:Type ad:DockingManager}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="/StartsInternational;component/Themes/Images/bgSystem.jpg"
+                                Stretch="Fill" TileMode="Tile" Viewport="0,0,257,256" ViewportUnits="Absolute"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="-1,0,-1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="486*" />
+            <RowDefinition Height="37" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="-.5,0,-.5,0" Name="grid1" Grid.Row="0" >
+            <Border VerticalAlignment="Bottom" BorderThickness="0,0,0,1.5" BorderBrush="silver" >
+                <ribbon:Ribbon  HorizontalContentAlignment="Center" Margin="0,-23,0,0" Name="ribbonMaster" Background="#FFF">
+                    <ribbon:Ribbon.ApplicationMenu>
+                        <ribbon:RibbonApplicationMenu Background="gray" BorderBrush="DimGray" BorderThickness="2" >
+                            <ribbon:RibbonApplicationMenuItem Header="Lock" Name="btnLock" ImageSource="Images/Lock.png" Click="btnLock_Click" HorizontalContentAlignment="Stretch"
+                                                              ToolTipTitle="Lock (Ctrl + L)" ToolTipDescription="Khóa hệ thống"/>
+                            <ribbon:RibbonApplicationMenuItem Header="Change password" ImageSource="Images/ChangePass.png" Name="Resetpass" Click="Resetpass_Click"/>
+                            <ribbon:RibbonApplicationMenuItem Header="Exit" Click="Exit_Click" ImageSource="Images/Exit.png"
+                                                              ToolTipTitle="Exit (Alt + F4)" ToolTipDescription="Thoát khỏi hệ thống"  />
+                        </ribbon:RibbonApplicationMenu>
+                    </ribbon:Ribbon.ApplicationMenu>
+
+                    <ribbon:RibbonTab x:Name="rbnSale" Header="Hợp đồng"  OverridesDefaultStyle="False">
+                        <ribbon:RibbonGroup x:Name="rg_Contract" Header="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="HDMG với tòa nhà / Chủ nhà" x:Name="rbn_c_r" LargeImageSource="Images/Suppliers.png" Click="btnDockingForm_Click" Tag="frmContract_Display_Tenant"/>
+                            <ribbon:RibbonButton Label="HDMG Khách" x:Name="rbn_c_t" LargeImageSource="Images/Customers.png" Click="btnDockingForm_Click" Tag="frmContract_Display"/>
+                        </ribbon:RibbonGroup>
+                    </ribbon:RibbonTab>
+
+                    <ribbon:RibbonTab x:Name="rbnAdjust" Header="Thông tin chung"  OverridesDefaultStyle="False">
+                        <ribbon:RibbonGroup x:Name="rg_Customer" Header="Khách hàng" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Khách hàng" x:Name="rbn_Customer" LargeImageSource="Images/Customers.png" Click="btnDockingForm_Click" Tag="frmCustomer_Display"/>
+                            <ribbon:RibbonButton Label="Đối tượng BĐS" x:Name="rbn_estate" LargeImageSource="Images/Estate.png" Click="btnDockingForm_Click" Tag="frmEstate_Object_Display"/>
+                            <ribbon:RibbonButton Label="Tòa nhà" x:Name="rbn_building" LargeImageSource="Images/Estate.png" Click="btnDockingForm_Click" Tag="frmBuilding_Display"/>
+                        </ribbon:RibbonGroup>
+                    </ribbon:RibbonTab>
+
+                    <ribbon:RibbonTab x:Name="rbnReport" Header="Báo cáo"  OverridesDefaultStyle="False" Margin="-8,6,8,-6">
+                        <ribbon:RibbonGroup x:Name="rg_RpStatus" Header="Trạng thái HĐ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Trạng thái hợp đồng" x:Name="rbn_rp_status_contract" LargeImageSource="Images/reports.ico" Click="btnDockingForm_Click" Tag="frmReport_Status_Contract"/>
+                        </ribbon:RibbonGroup>
+
+                        <ribbon:RibbonGroup x:Name="rg_RpK_Y" Header="Kỷ y" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Gia hạn hợp đồng" x:Name="rbn_rpky" LargeImageSource="Images/reports.ico" Click="btnDockingForm_Click" Tag="frmReport_Ky_Y"/>
+                        </ribbon:RibbonGroup>
+
+                        <ribbon:RibbonGroup x:Name="rg_RpTennat" Header="Bên cho thuê" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Trạng thái thanh toán phí" x:Name="rbn_rp_fee" LargeImageSource="Images/reports.ico" Click="btnDockingForm_Click" Tag="frmReport_QuaHan"/>
+                        </ribbon:RibbonGroup>
+
+                        <ribbon:RibbonGroup x:Name="rg_RpRenter" Header="Bên thuê" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Chưa đóng phí " x:Name="rbn_rp_chuadong" LargeImageSource="Images/reports.ico" Click="btnDockingForm_Click" Tag="frmReport_Contract_Renter_NoPay"/>
+                        </ribbon:RibbonGroup>
+                        
+                        <ribbon:RibbonGroup x:Name="rg_Fee" Header="Phí môi giới" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Phí môi giới" x:Name="rbn_rp_fees" LargeImageSource="Images/reports.ico" Click="btnDockingForm_Click" Tag="frmReport_Fees"/>
+                        </ribbon:RibbonGroup>
+                    </ribbon:RibbonTab>
+
+                    <ribbon:RibbonTab x:Name="rbnManager" Header="Quản trị"  OverridesDefaultStyle="False">
+                        <ribbon:RibbonGroup x:Name="rg_QT" Header="Quản trị hệ thống" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  SnapsToDevicePixels="False" OverridesDefaultStyle="False" >
+                            <ribbon:RibbonButton Label="Nhóm sử dụng" x:Name="rbn_Group_User" LargeImageSource="Images/icon_User.png" Click="btnDockingForm_Click" Tag="frmGroupUser"/>
+                            <ribbon:RibbonButton Label="Người sử dụng" x:Name="rbn_User" LargeImageSource="Images/icon_User.png" Click="btnDockingForm_Click" Tag="frmUserDisplay"/>
+                        </ribbon:RibbonGroup>
+                    </ribbon:RibbonTab>
+
+                </ribbon:Ribbon>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0" Name="grid2" >
+            <ad:DockingManager Margin="0,0,0,-5" Grid.Row="1" Style="{DynamicResource mainSystem}" x:Name="DockManager" 
+                               DockPanel.Dock="Bottom" IsAnimationEnabled="True" ActiveContent="{Binding ElementName=Content1}" 
+                               Foreground="#FFC4C4C4" Loaded="DockManager_Loaded">
+                <ad:ResizingPanel>
+                    <!--<ad:DockablePane/>-->
+                    <ad:DocumentPane Margin="0,0,0,0" />
+                </ad:ResizingPanel>
+            </ad:DockingManager>
+        </Grid>
+
+        <Border VerticalAlignment="Stretch" Grid.Row="2" CornerRadius="0,0,5,5"  Margin="-.5,0,-.5,-5" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--user-->
+                <Button Grid.Column="1" Width="20" Height="20" Style="{DynamicResource ButtonImage}" Click="btnImgUser_Click" 
+                        Name="btnImgUser" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/StartsInternational;component/Images/user.png"/>
+                    </Button.Background>
+
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Width="150" Height="150" Source="/StartsInternational;component/Images/user.jpg" Stretch="UniformToFill">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="75,75" RadiusX="75" RadiusY="75" />
+                                    </Image.Clip>
+                                </Image>
+                            </Grid>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <Label Grid.Column="2" Name="username" FontWeight="Bold" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Width="150" Height="150" Source="/StartsInternational;component/Images/user.jpg" Stretch="UniformToFill">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="75,75" RadiusX="75" RadiusY="75" />
+                                    </Image.Clip>
+                                </Image>
+                            </Grid>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Separator Grid.Column="2" Style="{DynamicResource mainSeparator}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="28" Margin="0,7,-28,0"/>
+                <!--end user-->
+
+
+                <!--date time-->
+                <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,5,0">
+                    <Image Source="/StartsInternational;component/Images/watch.png" Width="20" Height="20" ToolTip="Giờ giao dịch"/>
+                    <Label Name="lbltime" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold">12:00</Label>
+                </StackPanel>
+
+                <!--Special Tech-->
+                <Button Grid.Column="4" Style="{DynamicResource ButtonImage}" Width="20" Height="20" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" Margin="0,0,0,0"  Name="btnGoiY" Click="btnGoiY_Click" >
+                    <Button.Background>
+                        <ImageBrush  ImageSource="/StartsInternational;component/Images/Note.png"/>
+                    </Button.Background>
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="36"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Width="28" Height="28" Source="/StartsInternational;component/Images/Note.png"/>
+                                <StackPanel Grid.Column="1">
+                                    <Label Grid.Row="0" Content="Gợi ý" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+                                </StackPanel>
+                            </Grid>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

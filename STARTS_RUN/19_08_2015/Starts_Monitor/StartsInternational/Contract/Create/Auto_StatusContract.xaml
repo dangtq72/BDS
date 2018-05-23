@@ -1,0 +1,20 @@
+﻿<Window x:Class="StartsInternational.Contract.Create.Auto_StatusContract"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nhận thông tin PCF" Height="250" Width="550"
+        WindowStartupLocation="CenterScreen" KeyDown="frmReceiveVsd_KeyDown"
+        ShowInTaskbar="False" Style ="{DynamicResource WindowFormStyle}"
+        ResizeMode="NoResize" Name="frmReceiveVsd" Loaded="frmReceiveVsd_Loaded">
+    <Grid Style="{DynamicResource CenterGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Đang tự động cập nhật trạng thái ..." Margin="10,5,10,0" Name="lblMes" TextWrapping="Wrap"/>
+            <ProgressBar Margin="10,10,10,0" Height="22" Name="prgTTLK"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Style="{DynamicResource BottomGrid}">
+        </Grid>
+    </Grid>
+</Window>

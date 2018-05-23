@@ -1,0 +1,56 @@
+﻿<ad:DockableContent x:Class="StartsInternational.Display.Tenant_Display"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+        x:Name="frmTenant_Display"
+        Title="Thông tin người cho thuê nhà" Loaded="frmRenter_Display_Loaded_1"
+        KeyDown="frmRenter_Display_KeyDown_1"
+        Height="420" Width="1024">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <Label Content="Tên người thuê nhà" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Name="txtRenterName" Width="150" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Button Content="Tìm kiếm" Name="btnSearch" Click="btnSearch_Click_1" Width="100" Margin="5,0,0,0"/>
+            <Button Content="Kết xuất" Name="btnExport" Click="btnExport_Click_1" Width="100" Margin="5,0,0,0"/>
+            
+        </StackPanel>
+
+        <DataGrid  Name="dgrRenter" Grid.Row ="1"  AutoGenerateColumns="False"
+                   LoadingRow="dgrRenter_LoadingRow_1" PreviewKeyDown="dgrRenter_PreviewKeyDown_1"
+                           CanUserAddRows="False" VerticalContentAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="DoubleClick"/>
+                    <Style.Triggers>
+                        <Trigger Property="AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#FFEDEDED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Tenant_Name}" IsReadOnly="True" Header="Tên người cho thuê nhà" Width="250"/>
+                <DataGridTextColumn Binding="{Binding Address}" IsReadOnly="True" Header="Địa chỉ" Width="200" />
+                <DataGridTextColumn Binding="{Binding Representive}" IsReadOnly="True" Header="Đại diện" Width="200" />
+                <DataGridTextColumn Binding="{Binding Position}" IsReadOnly="True" Header="Vị trí" Width="200" />
+                <DataGridTextColumn Binding="{Binding Phone}" IsReadOnly="True" Header="Số đt" Width="100" />
+                <DataGridTextColumn Binding="{Binding Fax}" IsReadOnly="True" Header="Fax" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" Style="{DynamicResource BottomGrid}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Name="btnView" Margin="5,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Xem" Width="75" Click="btnView_Click_1"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</ad:DockableContent>

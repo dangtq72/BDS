@@ -1,0 +1,70 @@
+﻿<Window x:Class="Starts_Monitor.User.User_Rights"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Phân quyền cho người dùng" Height="544" Width="1000" Loaded="Window_Loaded" KeyDown="Window_KeyDown" 
+        WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowFormStyle}">
+    <Window.Resources>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <DataTemplate x:Key="Use_Right">
+            <Grid>
+                <CheckBox Name="us_right" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding Show}" 
+                          IsChecked="{Binding authcode}" Click="us_right_Click_1"  BorderBrush="{Binding Br_N}"/>
+            </Grid>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <DataGrid Name="gr_Rights" CanUserAddRows="False" AutoGenerateColumns="False" LoadingRow="grUser_Rights_LoadingRow"
+                      Margin="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PreviewKeyDown="grUser_Rights_PreviewKeyDown" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding name}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Tên chức năng" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn CellTemplate="{StaticResource Use_Right}" IsReadOnly="True" Width="80">
+                        <DataGridTemplateColumn.Header>
+                            <Label Content="Right" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <EventSetter Event="PreviewKeyDown" Handler="Use_Right_PreviewKeyDown"/>
+                            </Style>
+                        </DataGridTemplateColumn.CellStyle>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+                <DataGrid.ItemContainerStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=prid}" Value="0">
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.ItemContainerStyle>
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="2" Style="{DynamicResource BottomGrid}" Margin="0" Name="grdButton">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Chấp nhận" Width="90" HorizontalAlignment="Left" VerticalAlignment="Center" Name="btnChapNhan" Margin="0,0,0,0" Click="btnChapNhan_Click"/>
+                <Button Content="Thoát" Width="90" HorizontalAlignment="Left" Margin="100,0,0,0" Name="btnHuy" VerticalAlignment="Center" Click="btnHuy_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

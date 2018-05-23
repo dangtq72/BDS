@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0F8D757-8FF1-4683-A2F3-626520BE20A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StartsInternational</RootNamespace>
+    <AssemblyName>StartsInternational</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Run\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\starts_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlexCel">
+      <HintPath>..\..\General\dll\FlexCel.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexCelWinforms">
+      <HintPath>..\..\General\dll\FlexCelWinforms.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet">
+      <HintPath>..\..\General\dll\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\General\dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\General\dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\..\General\dll\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="RibbonControlsLibrary">
+      <HintPath>..\..\General\dll\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SendFiles">
+      <HintPath>..\..\General\dll\SendFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Building\Building_Display.xaml.cs">
+      <DependentUpon>Building_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Building\View_Building.xaml.cs">
+      <DependentUpon>View_Building.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Building\Update_Building.xaml.cs">
+      <DependentUpon>Update_Building.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Building\Create_Building.xaml.cs">
+      <DependentUpon>Create_Building.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Create\Chose_Customer.xaml.cs">
+      <DependentUpon>Chose_Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Create\Chose_Estate_Object.xaml.cs">
+      <DependentUpon>Chose_Estate_Object.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Create\Contract_Insert_Renter.xaml.cs">
+      <DependentUpon>Contract_Insert_Renter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Create\Contract_Insert_Tenant.xaml.cs">
+      <DependentUpon>Contract_Insert_Tenant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Create\Auto_StatusContract.xaml.cs">
+      <DependentUpon>Auto_StatusContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Display\Contract_Display.xaml.cs">
+      <DependentUpon>Contract_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Display\Contract_Display_Tenat.xaml.cs">
+      <DependentUpon>Contract_Display_Tenat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Display\Contract_HetHan_Display.xaml.cs">
+      <DependentUpon>Contract_HetHan_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Update\Update_Contract_Insert_Tenant.xaml.cs">
+      <DependentUpon>Update_Contract_Insert_Tenant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Update\Update_Contract_Insert_Renter.xaml.cs">
+      <DependentUpon>Update_Contract_Insert_Renter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\View\View_Contract_Tenant.xaml.cs">
+      <DependentUpon>View_Contract_Tenant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\View\View_Contract_Renter.xaml.cs">
+      <DependentUpon>View_Contract_Renter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Created\Group_User.xaml.cs">
+      <DependentUpon>Group_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Update\Group_User_Update.xaml.cs">
+      <DependentUpon>Group_User_Update.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\View\GroupUser_View.xaml.cs">
+      <DependentUpon>GroupUser_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_View.xaml.cs">
+      <DependentUpon>Customer_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_Update.xaml.cs">
+      <DependentUpon>Customer_Update.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_Display.xaml.cs">
+      <DependentUpon>Customer_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_Insert.xaml.cs">
+      <DependentUpon>Customer_Insert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\AutoCompleteTextBox.cs" />
+    <Compile Include="Display\Tenant_Display.xaml.cs">
+      <DependentUpon>Tenant_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Display\Renter_Display.xaml.cs">
+      <DependentUpon>Renter_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estate_Object\SearchBuilding.xaml.cs">
+      <DependentUpon>SearchBuilding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estate_Object\View_Estate_Object.xaml.cs">
+      <DependentUpon>View_Estate_Object.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estate_Object\Update_Estate_Object.xaml.cs">
+      <DependentUpon>Update_Estate_Object.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estate_Object\Create_Estate_Object.xaml.cs">
+      <DependentUpon>Create_Estate_Object.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estate_Object\Estate_Object_Display.xaml.cs">
+      <DependentUpon>Estate_Object_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Tenant_Payment.xaml.cs">
+      <DependentUpon>Tenant_Payment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report_Ky_Y.xaml.cs">
+      <DependentUpon>Report_Ky_Y.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report_Fees.xaml.cs">
+      <DependentUpon>Report_Fees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report_QuaHan.xaml.cs">
+      <DependentUpon>Report_QuaHan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report_Contract_Renter_NoPay.xaml.cs">
+      <DependentUpon>Report_Contract_Renter_NoPay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report_Status_Contract.xaml.cs">
+      <DependentUpon>Report_Status_Contract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\DataGrid.cs" />
+    <Compile Include="Themes\DatePicker.cs" />
+    <Compile Include="Themes\MainWindowETF.cs" />
+    <Compile Include="Themes\NoteBox.cs" />
+    <Compile Include="Themes\WindowStyle.cs" />
+    <Page Include="Building\Building_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Building\View_Building.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Building\Update_Building.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Building\Create_Building.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contract\Create\Chose_Customer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contract\Create\Chose_Estate_Object.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contract\Create\Contract_Insert_Renter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contract\Create\Contract_Insert_Tenant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Create\Auto_StatusContract.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Display\Contract_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Display\Contract_Display_Tenat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Display\Contract_HetHan_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Update\Update_Contract_Insert_Tenant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\Update\Update_Contract_Insert_Renter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\View\View_Contract_Tenant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contract\View\View_Contract_Renter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Alert\Check_Connection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Alert\frmLogOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Alert\frmNoteBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Alert\frmSuggest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Created\frmCreate_User.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Created\Group_User.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Created\Update_Pass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Update\Group_User_Update.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\User\GroupUser_Right.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\User\Group_User_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\User\User_Rights.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\View\GroupUser_View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customer\Customer_View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customer\Customer_Update.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customer\Customer_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customer\Customer_Insert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomUserControl\AutoCompleteComboBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomUserControl\ComboBoxSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomUserControl\CustomPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomUserControl\LoadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Display\Tenant_Display.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Display\Renter_Display.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Display\UserDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estate_Object\SearchBuilding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Estate_Object\View_Estate_Object.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estate_Object\Update_Estate_Object.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estate_Object\Create_Estate_Object.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Estate_Object\Estate_Object_Display.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CheckValidate.cs" />
+    <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\CommonFunction.cs" />
+    <Compile Include="Common\ConstParam.cs" />
+    <Compile Include="Common\ConvertData.cs" />
+    <Compile Include="Common\ConvertDisplay.cs" />
+    <Compile Include="Common\DataGridHelper.cs" />
+    <Compile Include="Common\DBMemory.cs" />
+    <Compile Include="Common\ObjectDataReader.cs" />
+    <Compile Include="Common\Ultil.cs" />
+    <Compile Include="Control\Alert\Check_Connection.xaml.cs">
+      <DependentUpon>Check_Connection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Alert\frmLogOn.xaml.cs">
+      <DependentUpon>frmLogOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Alert\frmNoteBox.xaml.cs">
+      <DependentUpon>frmNoteBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Alert\frmSuggest.xaml.cs">
+      <DependentUpon>frmSuggest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Created\frmCreate_User.xaml.cs">
+      <DependentUpon>frmCreate_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Created\Update_Pass.xaml.cs">
+      <DependentUpon>Update_Pass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\User\GroupUser_Right.xaml.cs">
+      <DependentUpon>GroupUser_Right.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\User\Group_User_Display.xaml.cs">
+      <DependentUpon>Group_User_Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\User\User_Rights.xaml.cs">
+      <DependentUpon>User_Rights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\ComboBoxSearch.xaml.cs">
+      <DependentUpon>ComboBoxSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\CustomPasswordBox.xaml.cs">
+      <DependentUpon>CustomPasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\FilterControl.cs" />
+    <Compile Include="CustomUserControl\LoadControl.xaml.cs">
+      <DependentUpon>LoadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Display\UserDisplay.xaml.cs">
+      <DependentUpon>UserDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Payment\Tenant_Payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\Report_Ky_Y.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Report_Fees.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Report_QuaHan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Report_Contract_Renter_NoPay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Report_Status_Contract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Border.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Combine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DockTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\FilterControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Grid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GroupBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Image.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MainWindowETF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\NoteBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\PasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Ribbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabControlVertical.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Textbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeETF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\WindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\WindowStyle_EX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Themes\Font\BuxtonSketch.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\Search\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvalonDock\AvalonDock.csproj">
+      <Project>{87e61430-4243-45f2-b74e-0a4c096cebf3}</Project>
+      <Name>AvalonDock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoryData\MemoryData.csproj">
+      <Project>{7f78e357-6bb9-4933-8b8b-dace5b8f1208}</Project>
+      <Name>MemoryData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjInfo\ObjInfo.csproj">
+      <Project>{47e73dd7-7169-45c6-b05d-e08bd37b73c0}</Project>
+      <Name>ObjInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Starts_Controller\Starts_Controller.csproj">
+      <Project>{d6724c50-cc9e-45ff-af24-47424915a0ce}</Project>
+      <Name>Starts_Controller</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\abc.png" />
+    <Resource Include="Images\Add.png" />
+    <Resource Include="Images\bg_button.png" />
+    <Resource Include="Images\bg_button_on.png" />
+    <Resource Include="Images\Category.png" />
+    <Resource Include="Images\ChangePass.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\Color.png" />
+    <Resource Include="Images\contract.jpg" />
+    <Resource Include="Images\Customers.png" />
+    <Resource Include="Images\down.PNG" />
+    <Resource Include="Images\Exit.png" />
+    <Resource Include="Images\eye.png" />
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\icon_User.png" />
+    <Resource Include="Images\imgSearch.png" />
+    <Resource Include="Images\Lock.png" />
+    <Resource Include="Images\LockOut.png" />
+    <Resource Include="Images\lockscreen.png" />
+    <Resource Include="Images\Login\backGround.png" />
+    <Resource Include="Images\Login\bg_button.png" />
+    <Resource Include="Images\Login\bg_button_on.png" />
+    <Resource Include="Images\Login\bg_Login.png" />
+    <Resource Include="Images\Login\exit.png" />
+    <Resource Include="Images\Login\Splash.png" />
+    <Resource Include="Images\Login\warning.png" />
+    <Resource Include="Images\Login\warning1.png" />
+    <Resource Include="Images\logo_HNX.png" />
+    <Resource Include="Images\money.png" />
+    <Resource Include="Images\money_euro.png" />
+    <Resource Include="Images\Note.png" />
+    <Resource Include="Images\Product.png" />
+    <Resource Include="Images\reports.ico" />
+    <Resource Include="Images\resizedimage.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\search1.PNG" />
+    <Resource Include="Images\search32.png" />
+    <Resource Include="Images\Suppliers.png" />
+    <Resource Include="Images\timeline.png" />
+    <Resource Include="Images\up.PNG" />
+    <Resource Include="Images\user.png" />
+    <Resource Include="Images\Warning.png" />
+    <Resource Include="Images\watch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\about.png" />
+    <Resource Include="Themes\Images\bg.jpg" />
+    <Resource Include="Themes\Images\bgETF.jpg" />
+    <Resource Include="Themes\Images\bgSystem.jpg" />
+    <Resource Include="Themes\Images\bg_footer.png" />
+    <Resource Include="Themes\Images\corporate.png" />
+    <Resource Include="Themes\Images\Default.png" />
+    <Resource Include="Themes\Images\Delete.png" />
+    <Resource Include="Themes\Images\exit.png" />
+    <Resource Include="Themes\Images\help.png" />
+    <Resource Include="Themes\Images\iconBieuDo_ChiSo_NhieuNgay.png" />
+    <Resource Include="Themes\Images\iconBieuDo_ChiSo_QuaKhu.png" />
+    <Resource Include="Themes\Images\iconBieuDo_ChiSo_TrongNgay.png" />
+    <Resource Include="Themes\Images\iconBieuDo_TrongNgay.png" />
+    <Resource Include="Themes\Images\Icon\about.png" />
+    <Resource Include="Themes\Images\Icon\bg.jpg" />
+    <Resource Include="Themes\Images\Icon\bg_footer.png" />
+    <Resource Include="Themes\Images\Icon\corporate.png" />
+    <Resource Include="Themes\Images\Icon\Default.png" />
+    <Resource Include="Themes\Images\Icon\Delete.png" />
+    <Resource Include="Themes\Images\Icon\exit.png" />
+    <Resource Include="Themes\Images\Icon\help.png" />
+    <Resource Include="Themes\Images\Icon\iconBieuDo_ChiSo_NhieuNgay.png" />
+    <Resource Include="Themes\Images\Icon\iconBieuDo_ChiSo_QuaKhu.png" />
+    <Resource Include="Themes\Images\Icon\iconBieuDo_ChiSo_TrongNgay.png" />
+    <Resource Include="Themes\Images\Icon\iconBieuDo_TrongNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_BaoCao.png" />
+    <Resource Include="Themes\Images\Icon\icon_BieuDo_CK.png" />
+    <Resource Include="Themes\Images\Icon\icon_BieuDo_CK_NhieuNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_BieuDo_CK_TrongNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_BieuDo_NhieuNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_BieuDo_QuaKhu.png" />
+    <Resource Include="Themes\Images\Icon\icon_ChiSo.png" />
+    <Resource Include="Themes\Images\Icon\icon_Circle-Chart.png" />
+    <Resource Include="Themes\Images\Icon\icon_CK_NhomNganh.png" />
+    <Resource Include="Themes\Images\Icon\icon_CK_QLDMCK.png" />
+    <Resource Include="Themes\Images\Icon\icon_CuoiNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_DauNgay.png" />
+    <Resource Include="Themes\Images\Icon\icon_Lock.png" />
+    <Resource Include="Themes\Images\Icon\icon_Lock_on.png" />
+    <Resource Include="Themes\Images\Icon\icon_ManHinh1.png" />
+    <Resource Include="Themes\Images\Icon\icon_ManHinh2.png" />
+    <Resource Include="Themes\Images\Icon\icon_ManHinh3.png" />
+    <Resource Include="Themes\Images\Icon\icon_ManHinh4.png" />
+    <Resource Include="Themes\Images\Icon\icon_PP-Tinh.png" />
+    <Resource Include="Themes\Images\Icon\icon_Save.png" />
+    <Resource Include="Themes\Images\Icon\icon_Save_Layer.png" />
+    <Resource Include="Themes\Images\Icon\icon_thamsohthong.png" />
+    <Resource Include="Themes\Images\Icon\icon_Thaydoi.png" />
+    <Resource Include="Themes\Images\Icon\icon_Them_B.png" />
+    <Resource Include="Themes\Images\Icon\icon_Them_Blue.png" />
+    <Resource Include="Themes\Images\Icon\icon_Them_D.png" />
+    <Resource Include="Themes\Images\Icon\icon_Them_G.png" />
+    <Resource Include="Themes\Images\Icon\icon_Them_Or.png" />
+    <Resource Include="Themes\Images\Icon\icon_ThongKe.png" />
+    <Resource Include="Themes\Images\Icon\icon_ThongTinCK.png" />
+    <Resource Include="Themes\Images\Icon\icon_ThucHienQuyen.png" />
+    <Resource Include="Themes\Images\Icon\icon_TienTe.png" />
+    <Resource Include="Themes\Images\Icon\icon_TraCuu.png" />
+    <Resource Include="Themes\Images\Icon\icon_TraCuu1.png" />
+    <Resource Include="Themes\Images\Icon\icon_TyGia.png" />
+    <Resource Include="Themes\Images\Icon\icon_TyLe_Capratio.png" />
+    <Resource Include="Themes\Images\Icon\icon_TyLe_Capratio1.png" />
+    <Resource Include="Themes\Images\Icon\icon_TyLe_Freefload.png" />
+    <Resource Include="Themes\Images\Icon\icon_TyLe_Freefload1.png" />
+    <Resource Include="Themes\Images\Icon\icon_User.png" />
+    <Resource Include="Themes\Images\Icon\icon_UserNhom.png" />
+    <Resource Include="Themes\Images\Icon\index_info_search.png" />
+    <Resource Include="Themes\Images\Icon\logout.png" />
+    <Resource Include="Themes\Images\Icon\OS.png" />
+    <Resource Include="Themes\Images\Icon\redo.png" />
+    <Resource Include="Themes\Images\Icon\save.png" />
+    <Resource Include="Themes\Images\Icon\stockchart.png" />
+    <Resource Include="Themes\Images\Icon\trace.png" />
+    <Resource Include="Themes\Images\icon_BaoCao.png" />
+    <Resource Include="Themes\Images\icon_BieuDo_CK.png" />
+    <Resource Include="Themes\Images\icon_BieuDo_CK_NhieuNgay.png" />
+    <Resource Include="Themes\Images\icon_BieuDo_CK_TrongNgay.png" />
+    <Resource Include="Themes\Images\icon_BieuDo_NhieuNgay.png" />
+    <Resource Include="Themes\Images\icon_BieuDo_QuaKhu.png" />
+    <Resource Include="Themes\Images\icon_ChiSo.png" />
+    <Resource Include="Themes\Images\icon_Circle-Chart.png" />
+    <Resource Include="Themes\Images\icon_CK_NhomNganh.png" />
+    <Resource Include="Themes\Images\icon_CK_QLDMCK.png" />
+    <Resource Include="Themes\Images\icon_CuoiNgay.png" />
+    <Resource Include="Themes\Images\icon_DauNgay.png" />
+    <Resource Include="Themes\Images\icon_Lock.png" />
+    <Resource Include="Themes\Images\icon_Lock_on.png" />
+    <Resource Include="Themes\Images\icon_ManHinh1.png" />
+    <Resource Include="Themes\Images\icon_ManHinh2.png" />
+    <Resource Include="Themes\Images\icon_ManHinh3.png" />
+    <Resource Include="Themes\Images\icon_ManHinh4.png" />
+    <Resource Include="Themes\Images\icon_PP-Tinh.png" />
+    <Resource Include="Themes\Images\icon_Save.png" />
+    <Resource Include="Themes\Images\icon_Save_Layer.png" />
+    <Resource Include="Themes\Images\icon_thamsohthong.png" />
+    <Resource Include="Themes\Images\icon_Thaydoi.png" />
+    <Resource Include="Themes\Images\icon_Them_B.png" />
+    <Resource Include="Themes\Images\icon_Them_Blue.png" />
+    <Resource Include="Themes\Images\icon_Them_D.png" />
+    <Resource Include="Themes\Images\icon_Them_G.png" />
+    <Resource Include="Themes\Images\icon_Them_Or.png" />
+    <Resource Include="Themes\Images\icon_ThongKe.png" />
+    <Resource Include="Themes\Images\icon_ThongTinCK.png" />
+    <Resource Include="Themes\Images\icon_ThucHienQuyen.png" />
+    <Resource Include="Themes\Images\icon_TienTe.png" />
+    <Resource Include="Themes\Images\icon_TraCuu.png" />
+    <Resource Include="Themes\Images\icon_TraCuu1.png" />
+    <Resource Include="Themes\Images\icon_TyGia.png" />
+    <Resource Include="Themes\Images\icon_TyLe_Capratio.png" />
+    <Resource Include="Themes\Images\icon_TyLe_Capratio1.png" />
+    <Resource Include="Themes\Images\icon_TyLe_Freefload.png" />
+    <Resource Include="Themes\Images\icon_TyLe_Freefload1.png" />
+    <Resource Include="Themes\Images\icon_User.png" />
+    <Resource Include="Themes\Images\icon_UserNhom.png" />
+    <Resource Include="Themes\Images\index_info_search.png" />
+    <Resource Include="Themes\Images\logout.png" />
+    <Resource Include="Themes\Images\monitor_alert.png" />
+    <Resource Include="Themes\Images\NoteBox\error.png" />
+    <Resource Include="Themes\Images\NoteBox\notice.png" />
+    <Resource Include="Themes\Images\NoteBox\question.png" />
+    <Resource Include="Themes\Images\OS.png" />
+    <Resource Include="Themes\Images\redo.png" />
+    <Resource Include="Themes\Images\Report\doc.png" />
+    <Resource Include="Themes\Images\Report\excel.png" />
+    <Resource Include="Themes\Images\Report\first.png" />
+    <Resource Include="Themes\Images\Report\last.png" />
+    <Resource Include="Themes\Images\Report\next.png" />
+    <Resource Include="Themes\Images\Report\ngang.png" />
+    <Resource Include="Themes\Images\Report\pdf.png" />
+    <Resource Include="Themes\Images\Report\preview.png" />
+    <Resource Include="Themes\Images\Report\print.png" />
+    <Resource Include="Themes\Images\Report\xml.png" />
+    <Resource Include="Themes\Images\Report\zoom_in.png" />
+    <Resource Include="Themes\Images\Report\zoom_out.png" />
+    <Resource Include="Themes\Images\save.png" />
+    <Resource Include="Themes\Images\Search.png" />
+    <Resource Include="Themes\Images\stockchart.png" />
+    <Resource Include="Themes\Images\trace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tenant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Estate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\123456.png" />
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="starts_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\starts_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\image_login.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
